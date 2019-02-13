@@ -1,0 +1,38 @@
+.borders {
+  border: 1px solid #0c835b; }
+
+.navigation {
+  top: 0px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 3px 70px 3px auto 3px 150px 3px 5%;
+  grid-template-columns: 5% 70px auto 150px 5%;
+  -ms-grid-rows: 70px;
+  grid-template-rows: 70px;
+  grid-template-areas: ". l my ad .";
+  grid-gap: 3px;
+  border-bottom: 1px solid #c9d4bb; }
+  .navigation .logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: l; }
+  .navigation .myBSRH {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: my;
+    text-align: right;
+    -ms-grid-row-align: center;
+    align-self: center; }
+  .navigation .advertise {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+    grid-area: ad;
+    padding: 3px 10px;
+    -ms-grid-row-align: center;
+    align-self: center;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    border-radius: 5px;
+    color: #fff;
+    background: #ff8000;
+    border: 2px solid #ffc476; }

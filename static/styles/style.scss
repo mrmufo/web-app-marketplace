@@ -1,0 +1,35 @@
+.borders {
+    border: 1px solid rgb(12, 131, 91);
+}
+
+.navigation {
+    top: 0px;
+    display: grid;
+    grid-template-columns: 5% 70px auto 150px 5% ;
+    grid-template-rows: 70px;
+    grid-template-areas: 
+        ". l my ad .";
+    grid-gap: 3px;
+    border-bottom: 1px solid rgb(201, 212, 187);
+
+    .logo {
+        grid-area: l;
+    }
+
+    .myBSRH {
+        grid-area: my;
+        text-align: right;
+        align-self: center;
+    }
+
+    .advertise {
+        grid-area: ad;
+        padding: 3px 10px;;
+        align-self: center;
+        justify-self: center;
+        border-radius: 5px;
+        color: #fff;
+        background: rgb(255, 128, 0);
+        border: 2px solid rgb(255, 196, 118);
+    }
+}
