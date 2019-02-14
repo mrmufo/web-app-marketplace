@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fee64f7b-ec89-46a7-be33-904fd0d5d916" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/OLX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OLX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/app_store_download.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_agriculture.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_animals.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_car.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_electronics.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_fashion.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_find_engineer.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_free.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_house_garden.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_kids.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_music.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_properties.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_services.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_sport.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_swap.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_wedding.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/category_work.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/google_play_download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/logo_facebook.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/logo_grey.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/logo_instagram.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/img/logo_youtube.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="fee64f7b-ec89-46a7-be33-904fd0d5d916" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="5">
     <option name="width" value="960" />
     <option name="height" value="1030" />
   </component>
