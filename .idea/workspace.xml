@@ -2,9 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fee64f7b-ec89-46a7-be33-904fd0d5d916" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OLX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OLX.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/app_store_download.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_agriculture.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_animals.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_car.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_electronics.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_fashion.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_find_engineer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_free.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_house_garden.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_kids.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_music.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_properties.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_services.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_sport.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_swap.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_wedding.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/category_work.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/google_play_download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/logo_facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/logo_grey.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/logo_instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/img/logo_youtube.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,16 +40,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="128">
+              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -45,9 +74,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/styles/style.scss" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -62,30 +91,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BSRH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BSRH" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BSRH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BSRH" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BSRH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BSRH" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -145,9 +151,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/styles/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -164,8 +167,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        <state relative-caret-position="128">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
