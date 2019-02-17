@@ -10,7 +10,7 @@
     grid-template-rows: 70px 400px;
     grid-template-areas: 
         ". n n n ."
-        ". . c . .";
+        ". c c c .";
 
     .navigation {
         grid-area: n;
@@ -34,9 +34,9 @@
 
         .advertise {
             grid-area: a;
-            padding: 3px 10px;;
             align-self: center;
             justify-self: center;
+            padding: 3px 10px;;
             border-radius: 5px;
             color: #fff;
             background: rgb(255, 128, 0);
@@ -47,32 +47,31 @@
 
     .categories {
         grid-area: c;
-        grid-gap: 5px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        justify-self: center;
+        grid-gap: 7px;
+        grid-template-columns: repeat(4, minmax(auto, 250px));
         grid-auto-rows: 50px;
             
         .category {
+            display: grid;
+            grid-template-columns: auto 150px;
+            grid-auto-rows: 50px;
             align-self: center;
             justify-self: left;
             
             img {
+                color: aqua;
+                justify-self: right;
+                align-self: center;
                 height: 25px;
                 padding-right: 7px;
             }
+
+            span {
+                align-self: center;
+                justify-self: left;
+            }
         }
     }
-
-
-    //     .category {
-    //         grid-column: 2 / 3;
-    //         height: 25px;
-    //         padding-right: 5px;
-    //         justify-self: center;
-
-    //         img {
-    //             height: 25px;
-    //         }
-    //     }
-    // }
 }

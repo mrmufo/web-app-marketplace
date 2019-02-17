@@ -10,7 +10,7 @@
   grid-template-columns: [empty-start] minmax(0px, 1fr) [main-start] 3fr [empty-end] auto [empty-start] 3fr [main-end] minmax(0px, 1fr) [empty-end];
   -ms-grid-rows: 70px 5px 400px;
   grid-template-rows: 70px 400px;
-  grid-template-areas: ". n n n ." ". . c . ."; }
+  grid-template-areas: ". n n n ." ". c c c ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -40,31 +40,50 @@
       -ms-grid-row: 1;
       -ms-grid-column: 5;
       grid-area: a;
-      padding: 3px 10px;
       -ms-grid-row-align: center;
       align-self: center;
       -ms-grid-column-align: center;
       justify-self: center;
+      padding: 3px 10px;
       border-radius: 5px;
       color: #fff;
       background: #ff8000;
       border: 2px solid #ffc476; }
   .wrapper .categories {
     -ms-grid-row: 3;
-    -ms-grid-column: 5;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 5;
     grid-area: c;
-    grid-gap: 5px;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[4];
-    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-column-align: center;
+    justify-self: center;
+    grid-gap: 7px;
+    -ms-grid-columns: (minmax(auto, 250px))[4];
+    grid-template-columns: repeat(4, minmax(auto, 250px));
     grid-auto-rows: 50px; }
     .wrapper .categories .category {
-      -ms-flex-item-align: center;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: auto 150px;
+      grid-template-columns: auto 150px;
+      grid-auto-rows: 50px;
       -ms-grid-row-align: center;
       align-self: center;
       -ms-grid-column-align: left;
       justify-self: left; }
       .wrapper .categories .category img {
+        color: aqua;
+        -ms-grid-column-align: right;
+        justify-self: right;
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
         height: 25px;
         padding-right: 7px; }
+      .wrapper .categories .category span {
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+        -ms-grid-column-align: left;
+        justify-self: left; }
