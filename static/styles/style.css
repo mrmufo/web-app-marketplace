@@ -6,20 +6,19 @@
   display: -ms-grid;
   display: grid;
   grid-gap: 5px;
-  -ms-grid-columns: [empty-start] 5px minmax(0px, 1fr) 5px [main-start] 5px 3fr 5px [empty-end] 5px auto 5px [empty-start] 5px 3fr 5px [main-end] 5px minmax(0px, 1fr) 5px [empty-end];
-  grid-template-columns: [empty-start] minmax(0px, 1fr) [main-start] 3fr [empty-end] auto [empty-start] 3fr [main-end] minmax(0px, 1fr) [empty-end];
+  -ms-grid-columns: minmax(0px, 1fr) 5px minmax(0, 900px) 5px minmax(0px, 1fr);
+  grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
   -ms-grid-rows: 70px 5px 400px;
   grid-template-rows: 70px 400px;
-  grid-template-areas: ". n n n ." ". c c c ."; }
+  grid-template-areas: ". n  ." ". c  ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 5;
     grid-area: n;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 70px 3px minmax(100px, 1fr) 3px 150px;
-    grid-template-columns: 70px minmax(100px, 1fr) 150px;
+    -ms-grid-columns: 70px 3px minmax(150px, 1fr) 3px 120px;
+    grid-template-columns: 70px minmax(150px, 1fr) 120px;
     -ms-grid-rows: 70px;
     grid-template-rows: 70px;
     grid-template-areas: "l m a";
@@ -52,16 +51,13 @@
   .wrapper .categories {
     -ms-grid-row: 3;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 5;
     grid-area: c;
     display: -ms-grid;
     display: grid;
-    -ms-grid-column-align: center;
-    justify-self: center;
     grid-gap: 7px;
-    -ms-grid-columns: (minmax(auto, 250px))[4];
-    grid-template-columns: repeat(4, minmax(auto, 250px));
-    grid-auto-rows: 50px; }
+    grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+    -ms-grid-rows: (50px)[4];
+    grid-template-rows: repeat(4, 50px); }
     .wrapper .categories .category {
       display: -ms-grid;
       display: grid;

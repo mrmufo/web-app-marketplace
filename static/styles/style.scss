@@ -6,16 +6,16 @@
     height: 100%;
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: [empty-start] minmax(0px, 1fr) [main-start] 3fr [empty-end] auto [empty-start] 3fr [main-end] minmax(0px, 1fr) [empty-end];
+    grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
     grid-template-rows: 70px 400px;
     grid-template-areas: 
-        ". n n n ."
-        ". c c c .";
+        ". n  ."
+        ". c  .";
 
     .navigation {
         grid-area: n;
         display: grid;
-        grid-template-columns: 70px minmax(100px, 1fr) 150px;
+        grid-template-columns: 70px minmax(150px, 1fr) 120px;
         grid-template-rows: 70px;
         grid-template-areas: 
             "l m a";
@@ -48,10 +48,9 @@
     .categories {
         grid-area: c;
         display: grid;
-        justify-self: center;
         grid-gap: 7px;
-        grid-template-columns: repeat(4, minmax(auto, 250px));
-        grid-auto-rows: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+        grid-template-rows: repeat(4, 50px);
             
         .category {
             display: grid;
