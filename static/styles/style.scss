@@ -1,16 +1,14 @@
-.borders {
-    border: 1px solid rgb(12, 131, 91);
-}
 
 .wrapper {
     height: 100%;
     display: grid;
     grid-gap: 5px;
     grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-    grid-template-rows: 70px 400px;
+    grid-template-rows: 70px 70px 400px;
     grid-template-areas: 
-        ". n  ."
-        ". c  .";
+        ". n ."
+        ". s ."
+        ". c .";
 
     .navigation {
         grid-area: n;
@@ -44,6 +42,33 @@
         }
     }
 
+    .searchbar {
+        grid-area: s;
+        border-radius: 5px;
+        background-color: rgb(40, 96, 250);
+        display: grid;
+        align-self: center;
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-template-rows: 50px;
+        grid-template-areas: 
+            "s r sub";
+        
+        .search {
+            grid-area: s;
+            height: 30px;
+            justify-self: center;
+            background-color: rgb(126, 161, 255);
+        }
+
+        .region {
+            grid-area: r;
+        }
+
+        button {
+            grid-area: sub;
+        }
+        
+    }
 
     .categories {
         grid-area: c;
