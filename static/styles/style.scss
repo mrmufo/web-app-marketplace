@@ -1,10 +1,9 @@
-
 .wrapper {
     height: 100%;
     display: grid;
     grid-gap: 5px;
     grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-    grid-template-rows: 70px 70px 400px;
+    grid-template-rows: 70px 70px auto;
     grid-template-areas: 
         ". n ."
         ". s ."
@@ -45,33 +44,45 @@
     .searchbar {
         grid-area: s;
         border-radius: 5px;
-        background-color: rgb(40, 96, 250);
+        background-color: rgb(0, 149, 248);
         display: grid;
+        grid-column-gap: 10px;
         align-self: center;
         grid-template-columns: 2fr 2fr 1fr;
         grid-template-rows: 50px;
         grid-template-areas: 
             "s r sub";
-        
-        .search {
-            grid-area: s;
-            height: 30px;
-            justify-self: center;
-            background-color: rgb(126, 161, 255);
+
+        input[type="text"], textarea {
+            background-color :  rgb(179, 217, 248); 
+            border-radius: 5px;
+            height: 28px;
+            align-self: center;  
+            border: none;
         }
 
-        .region {
+        #search {         
+            grid-area: s;
+            margin-left: 10px;
+        }
+
+        #region {
             grid-area: r;
         }
 
         button {
             grid-area: sub;
+            height: 30px;
+            align-self: center;
+            border-radius: 5px;
+            margin-right: 10px;
         }
         
     }
 
     .categories {
         grid-area: c;
+        background-color: rgb(247, 247, 247);
         display: grid;
         grid-gap: 7px;
         grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
