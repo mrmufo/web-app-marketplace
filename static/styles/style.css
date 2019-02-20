@@ -1,3 +1,4 @@
+/*---------- HOMEPAGE ----------*/
 .wrapper {
   height: 100%;
   display: -ms-grid;
@@ -5,8 +6,8 @@
   grid-gap: 5px;
   -ms-grid-columns: minmax(0px, 1fr) 5px minmax(0, 900px) 5px minmax(0px, 1fr);
   grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-  -ms-grid-rows: 70px 5px 70px 5px auto;
-  grid-template-rows: 70px 70px auto;
+  -ms-grid-rows: 70px 5px auto 5px auto;
+  grid-template-rows: 70px auto auto;
   grid-template-areas: ". n ." ". s ." ". c ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
@@ -45,6 +46,14 @@
       color: #fff;
       background: #ff8000;
       border: 2px solid #ffc476; }
+    .wrapper .navigation .userbox {
+      -ms-grid-row: 1;
+      -ms-grid-column: 5;
+      grid-area: a;
+      -ms-grid-row-align: center;
+      align-self: center;
+      -ms-grid-column-align: center;
+      justify-self: center; }
   .wrapper .searchbar {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
@@ -120,3 +129,9 @@
         align-self: center;
         -ms-grid-column-align: left;
         justify-self: left; }
+  .wrapper .new-ad-form {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: s; }
+
+/*------------------------------*/

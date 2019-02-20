@@ -1,9 +1,10 @@
+/*---------- HOMEPAGE ----------*/
 .wrapper {
     height: 100%;
     display: grid;
     grid-gap: 5px;
     grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-    grid-template-rows: 70px 70px auto;
+    grid-template-rows: 70px auto auto;
     grid-template-areas: 
         ". n ."
         ". s ."
@@ -38,6 +39,15 @@
             color: #fff;
             background: rgb(255, 128, 0);
             border: 2px solid rgb(255, 196, 118);
+        }
+        
+        //Ask if nesting like this is correct
+        //Ask if adding classes like .userbox used for new-ad-form.html
+        //to wrapper used in index.html is a good way?
+        .userbox {
+            grid-area: a;
+            align-self: center;
+            justify-self: center;
         }
     }
 
@@ -109,4 +119,10 @@
             }
         }
     }
+
+    .new-ad-form {
+        grid-area: s;
+    }
 }
+
+/*------------------------------*/
