@@ -10,16 +10,16 @@
                 <div class="logo">
                     <img src="static/img/logo.svg" alt="Logo">
                 </div>
-                <div class="userbox">Account name</div>
+                <div class="userbox ghv-center">Account name</div>
             </div>
-        <form method="POST" action="{{ url_for('post_new_ad') }}" class="new-ad-form">
+            <form method="POST" action="{{ url_for('post_new_ad') }}" class="new-ad-form">
                 <div>
-                    <label for="title">Enter the title</label>
+                    <label for="title">Title</label>
                     <input name="title" id="title" placeholder="Ad title">
                 </div>
                 <input type="submit" />
                 <a href="{{ url_for('home') }}" class="btn btn-primary">Go back</a>
-        </form>
+            </form>
         </div>
     </body>
 </html>

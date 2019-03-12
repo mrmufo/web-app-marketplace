@@ -1,4 +1,21 @@
-/*---------- HOMEPAGE ----------*/
+/* --------------- BASIC SETUP ---------------- */
+html {
+  background-color: #fff;
+  color: #555555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-rendering: optimizeLegibility; }
+
+/*---------- REUSABLE COMPONENTS ----------*/
+.ghv-center {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -ms-grid-column-align: center;
+  justify-self: center; }
+
+/*---------------- HOMEPAGE ---------------*/
 .wrapper {
   height: 100%;
   display: -ms-grid;
@@ -30,17 +47,14 @@
       -ms-grid-row: 1;
       -ms-grid-column: 3;
       grid-area: m;
-      text-align: right;
       -ms-grid-row-align: center;
-      align-self: center; }
+      align-self: center;
+      -ms-grid-column-align: right;
+      justify-self: right; }
     .wrapper .navigation .advertise {
       -ms-grid-row: 1;
       -ms-grid-column: 5;
       grid-area: a;
-      -ms-grid-row-align: center;
-      align-self: center;
-      -ms-grid-column-align: center;
-      justify-self: center;
       padding: 3px 10px;
       border-radius: 5px;
       color: #fff;
@@ -49,11 +63,7 @@
     .wrapper .navigation .userbox {
       -ms-grid-row: 1;
       -ms-grid-column: 5;
-      grid-area: a;
-      -ms-grid-row-align: center;
-      align-self: center;
-      -ms-grid-column-align: center;
-      justify-self: center; }
+      grid-area: a; }
   .wrapper .searchbar {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
