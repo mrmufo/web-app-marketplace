@@ -16,7 +16,7 @@ db.create_all()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
+    category = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
 
 
@@ -26,6 +26,7 @@ guest = User(username='guest', email='guest@example.com')
 
 @app.route('/')
 def home():
+
     return render_template('index.html')
 
 
