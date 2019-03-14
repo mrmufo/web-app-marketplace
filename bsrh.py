@@ -6,7 +6,6 @@ from flask import (
 )
 from flask_sqlalchemy import SQLAlchemy
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/mufo/FlaskProjects/BSRH/bsrh.db'
@@ -24,23 +23,6 @@ admin = User(username='admin', email='admin@example.com')
 guest = User(username='guest', email='guest@example.com')
 
 
-@app.route('/')
-def home():
-
-    return render_template('index.html')
-
-
-@app.route('/new_ad')
-def new_ad_form():
-    return render_template('new_ad.html')
-
-
-@app.route('/new_ad', methods=['POST'])
-def post_new_ad():
-
-    return redirect(url_for('home'))
-
-
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     bsrh.run()
 
