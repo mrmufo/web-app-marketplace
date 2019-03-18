@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="new-ad-form">
+        <h1>Sign in</h1>
+        <form action="" method="POST" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}
+            </p>
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }} </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+{% endblock %}

@@ -4,6 +4,7 @@ from flask import (
     url_for
 )
 from app import app
+from app.forms import LoginForm
 
 
 @app.route('/')
@@ -19,3 +20,20 @@ def new_ad_form():
 @app.route('/new_ad', methods=['POST'])
 def post_new_ad():
     return redirect(url_for('home'))
+
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    user = {'username': 'Miguel'}
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+    return render_template('login.html', title='Sign in', form=form)

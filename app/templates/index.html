@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="searchbar">
+        <input type="text" id="search" name="search">
+        <input type="text" id="region" name="region">
+        <button>Search</button>
+    </div>
     <ul class="categories">
         <li class="category"><img src="static/img/category_car.svg"><span>Motors</span></li>
         <li class="category"><img src="static/img/category_properties.svg"><span>Properties</span></li>
