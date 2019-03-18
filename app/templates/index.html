@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="static/styles/style.css?version=3.2">
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="navigation">
-                <div class="logo">
-                    <img src="static/img/logo.svg" alt="Logo">
-                </div>
-                <div class="myBSRH">My BSRH</div>
-                <a href="{{ url_for('new_ad_form') }}" class="advertise ghv-center">+ Advertise</a>
-            </div>
-            
-            <div class="searchbar">
-                <input type="text" id="search" name="search">
-                <input type="text" id="region" name="region">
-                <button>Search</button>
-            </div>
+{% extends "base.html" %}
 
-            <ul class="categories">
-                <li class="category"><img src="static/img/category_car.svg"><span>Motors</span></li>
-                <li class="category"><img src="static/img/category_properties.svg"><span>Properties</span></li>
-                <li class="category"><img src="static/img/category_work.svg"><span>Job</span></li>
-                <li class="category"><img src="static/img/category_house_garden.svg"><span>House & Garden</span></li>
-                <li class="category"><img src="static/img/category_electronics.svg"><span>Electronics</span></li>
-                <li class="category"><img src="static/img/category_fashion.svg"><span>Fashion</span></li>
-                <li class="category"><img src="static/img/category_agriculture.svg"><span>Agriculture</span></li>
-                <li class="category"><img src="static/img/category_animals.svg"><span>Animals</span></li>
-                <li class="category"><img src="static/img/category_kids.svg"><span>Kids</span></li>
-                <li class="category"><img src="static/img/category_sport.svg"><span>Sport & Hobby</span></li>
-                <li class="category"><img src="static/img/category_music.svg"><span>Music & Education</span></li>
-                <li class="category"><img src="static/img/category_services.svg"><span>Services</span></li>
-                <li class="category"><img src="static/img/category_wedding.svg"><span>Wedding</span></li>
-                <li class="category"><img src="static/img/category_free.svg"><span>Free</span></li>
-                <li class="category"><img src="static/img/category_swap.svg"><span>Swap</span></li>
-                <li class="category"><img src="static/img/category_find_engineer.svg"><span>Find specialist</span></li>
-            </ul>
-
-        </div>
-    </body>
-</html>
+{% block content %}
+    <ul class="categories">
+        <li class="category"><img src="static/img/category_car.svg"><span>Motors</span></li>
+        <li class="category"><img src="static/img/category_properties.svg"><span>Properties</span></li>
+        <li class="category"><img src="static/img/category_work.svg"><span>Job</span></li>
+        <li class="category"><img src="static/img/category_house_garden.svg"><span>House & Garden</span></li>
+        <li class="category"><img src="static/img/category_electronics.svg"><span>Electronics</span></li>
+        <li class="category"><img src="static/img/category_fashion.svg"><span>Fashion</span></li>
+        <li class="category"><img src="static/img/category_agriculture.svg"><span>Agriculture</span></li>
+        <li class="category"><img src="static/img/category_animals.svg"><span>Animals</span></li>
+        <li class="category"><img src="static/img/category_kids.svg"><span>Kids</span></li>
+        <li class="category"><img src="static/img/category_sport.svg"><span>Sport & Hobby</span></li>
+        <li class="category"><img src="static/img/category_music.svg"><span>Music & Education</span></li>
+        <li class="category"><img src="static/img/category_services.svg"><span>Services</span></li>
+        <li class="category"><img src="static/img/category_wedding.svg"><span>Wedding</span></li>
+        <li class="category"><img src="static/img/category_free.svg"><span>Free</span></li>
+        <li class="category"><img src="static/img/category_swap.svg"><span>Swap</span></li>
+        <li class="category"><img src="static/img/category_find_engineer.svg"><span>Find specialist</span></li>
+    </ul>
+{% endblock %}
