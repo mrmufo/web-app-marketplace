@@ -1,7 +1,8 @@
 from flask import (
     render_template,
     redirect,
-    url_for
+    url_for,
+    flash
 )
 from app import app
 from app.forms import LoginForm
@@ -22,18 +23,24 @@ def post_new_ad():
     return redirect(url_for('home'))
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    user = {'username': 'Miguel'}
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
+    if form.validate_on_submit():
+        print("Jestem")
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect(url_for('home'))
+    # user = {'username': 'Miguel'}
+    # posts = [
+    #     {
+    #         'author': {'username': 'John'},
+    #         'body': 'Beautiful day in Portland!'
+    #     },
+    #     {
+    #         'author': {'username': 'Susan'},
+    #         'body': 'The Avengers movie was so cool!'
+    #     }
+    # ]
+    print("nieJestem")
     return render_template('login.html', title='Sign in', form=form)

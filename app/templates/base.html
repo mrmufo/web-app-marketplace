@@ -12,7 +12,18 @@
                 <a href="{{ url_for('login') }}" class="myBSRH">My BSRH</a>
                 <a href="{{ url_for('new_ad_form') }}" class="advertise ghv-center">+ Advertise</a>
             </div>
-            
+            <div class="new-ad-form2">
+                <hr>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </div>
             {% block content %}{% endblock %}
         </div>
     </body>

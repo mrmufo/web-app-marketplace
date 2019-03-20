@@ -24,7 +24,8 @@ html {
     grid-template-areas: 
         ". n ."
         ". s ."
-        ". c .";
+        ". c ."
+        ". test .";
 
     .navigation {
         grid-area: n;
@@ -131,6 +132,10 @@ html {
 
     .new-ad-form {
         grid-area: s;
+    }
+
+    .new-ad-form2 {
+        grid-area: test;
     }
 }
 

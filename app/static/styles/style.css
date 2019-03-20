@@ -25,7 +25,7 @@ html {
   grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
   -ms-grid-rows: 70px 5px auto 5px auto;
   grid-template-rows: 70px auto auto;
-  grid-template-areas: ". n ." ". s ." ". c ."; }
+  grid-template-areas: ". n ." ". s ." ". c ." ". test ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -143,5 +143,9 @@ html {
     -ms-grid-row: 3;
     -ms-grid-column: 3;
     grid-area: s; }
+  .wrapper .new-ad-form2 {
+    -ms-grid-row: 7;
+    -ms-grid-column: 3;
+    grid-area: test; }
 
 /*------------------------------*/
