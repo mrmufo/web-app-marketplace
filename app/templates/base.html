@@ -9,7 +9,11 @@
                 <div class="logo">
                     <img src="static/img/logo.svg" alt="Logo">
                 </div>
-                <a href="{{ url_for('login') }}" class="myBSRH">My BSRH</a>
+                {% if current_user.is_anonymous %}
+                <a href="{{ url_for('login') }}" class="myBSRH">Login</a>
+                {% else %}
+                <a href="{{ url_for('logout') }}" class="myBSRH">Logout</a>
+                {% endif %}
                 <a href="{{ url_for('new_ad_form') }}" class="advertise ghv-center">+ Advertise</a>
             </div>
             <div class="new-ad-form2">
