@@ -23,9 +23,9 @@ html {
   grid-gap: 5px;
   -ms-grid-columns: minmax(0px, 1fr) 5px minmax(0, 900px) 5px minmax(0px, 1fr);
   grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-  -ms-grid-rows: 70px 5px auto 5px auto;
-  grid-template-rows: 70px auto auto;
-  grid-template-areas: ". n ." ". s ." ". c ." ". test ."; }
+  -ms-grid-rows: 70px 5px auto 5px auto 5px auto 5px auto;
+  grid-template-rows: 70px auto auto auto auto;
+  grid-template-areas: ". n ." ". hi ." ". s ." ". c ." ". test ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -64,6 +64,10 @@ html {
       -ms-grid-row: 1;
       -ms-grid-column: 5;
       grid-area: a; }
+  .wrapper .greetings {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: hi; }
   .wrapper .searchbar {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
@@ -104,7 +108,7 @@ html {
       border-radius: 5px;
       margin-right: 10px; }
   .wrapper .categories {
-    -ms-grid-row: 5;
+    -ms-grid-row: 7;
     -ms-grid-column: 3;
     grid-area: c;
     background-color: #f7f7f7;
@@ -140,11 +144,11 @@ html {
         -ms-grid-column-align: left;
         justify-self: left; }
   .wrapper .new-ad-form {
-    -ms-grid-row: 3;
+    -ms-grid-row: 5;
     -ms-grid-column: 3;
     grid-area: s; }
   .wrapper .new-ad-form2 {
-    -ms-grid-row: 7;
+    -ms-grid-row: 9;
     -ms-grid-column: 3;
     grid-area: test; }
 

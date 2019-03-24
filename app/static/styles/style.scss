@@ -20,9 +20,10 @@ html {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-    grid-template-rows: 70px auto auto;
+    grid-template-rows: 70px auto auto auto auto;
     grid-template-areas: 
         ". n ."
+        ". hi ."
         ". s ."
         ". c ."
         ". test .";
@@ -59,6 +60,10 @@ html {
         .userbox {
             grid-area: a;
         }
+    }
+
+    .greetings {
+        grid-area: hi;
     }
 
     .searchbar {

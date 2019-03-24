@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% block content2 %}
+        <div class="greetings">
+            <h1>Hi {{ current_user.username }}!</h1>
+            {% for ad in ads %}
+            <p>{{ad.author.username }} advertised: <b>{{ ad.content }}</b></p>
+            {% endfor %}
+        </div>
+    {% endblock %}
     <div class="searchbar">
         <input type="text" id="search" name="search">
         <input type="text" id="region" name="region">
