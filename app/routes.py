@@ -19,7 +19,6 @@ from app.models import User
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
     ads = [
         {
@@ -35,6 +34,7 @@ def index():
 
 
 @app.route('/new_ad')
+@login_required
 def new_ad_form():
     return render_template('new_ad.html')
 
@@ -56,6 +56,7 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
+        # Redirect only to relative URL
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
