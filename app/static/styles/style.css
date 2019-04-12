@@ -25,7 +25,7 @@ html {
   grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
   -ms-grid-rows: 70px 5px auto 5px auto 5px auto 5px auto;
   grid-template-rows: 70px auto auto auto auto;
-  grid-template-areas: ". n ." ". hi ." ". s ." ". c ." ". test ."; }
+  grid-template-areas: ". n ." ". hi ." ". s ." ". c ." ". test ." ". reg ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -151,5 +151,9 @@ html {
     -ms-grid-row: 9;
     -ms-grid-column: 3;
     grid-area: test; }
+  .wrapper .reg-form {
+    -ms-grid-row: 11;
+    -ms-grid-column: 3;
+    grid-area: reg; }
 
 /*------------------------------*/

@@ -26,7 +26,8 @@ html {
         ". hi ."
         ". s ."
         ". c ."
-        ". test .";
+        ". test ."
+        ". reg .";
 
     .navigation {
         grid-area: n;
@@ -141,6 +142,10 @@ html {
 
     .new-ad-form2 {
         grid-area: test;
+    }
+
+    .reg-form {
+        grid-area: reg;
     }
 }
 
