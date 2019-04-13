@@ -23,9 +23,9 @@ html {
   grid-gap: 5px;
   -ms-grid-columns: minmax(0px, 1fr) 5px minmax(0, 900px) 5px minmax(0px, 1fr);
   grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-  -ms-grid-rows: 70px 5px auto 5px auto 5px auto 5px auto;
-  grid-template-rows: 70px auto auto auto auto;
-  grid-template-areas: ". n ." ". hi ." ". s ." ". c ." ". test ." ". reg ."; }
+  -ms-grid-rows: 70px 5px auto 5px auto 5px auto 5px auto 5px auto 5px auto;
+  grid-template-rows: 70px auto auto auto auto auto auto;
+  grid-template-areas: ". n ." ". hi ." ". s ." ". c ." ". test ." ". reg ." ". user ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -46,6 +46,7 @@ html {
     .wrapper .navigation .myBSRH {
       -ms-grid-row: 1;
       -ms-grid-column: 3;
+      position: initial;
       grid-area: m;
       -ms-grid-row-align: center;
       align-self: center;
@@ -155,5 +156,9 @@ html {
     -ms-grid-row: 11;
     -ms-grid-column: 3;
     grid-area: reg; }
+  .wrapper .user {
+    -ms-grid-row: 13;
+    -ms-grid-column: 3;
+    grid-area: user; }
 
 /*------------------------------*/
