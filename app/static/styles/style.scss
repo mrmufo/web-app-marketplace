@@ -20,17 +20,21 @@ html {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
-    grid-template-rows: 70px auto auto auto auto auto auto;
+    grid-template-rows: 74px auto auto auto auto auto auto auto;
     grid-template-areas: 
         ". n ."
         ". hi ."
-        ". s ."
+        ". an ."
         ". c ."
         ". test ."
         ". reg ."
-        ". user .";
+        ". user ."
+        ". edit .";
 
     .navigation {
+        border-radius: 35px;
+        background-color: rgb(238, 248, 255);
+        border: 2px solid rgb(255, 196, 118);
         grid-area: n;
         display: grid;
         grid-template-columns: 70px minmax(150px, 1fr) 120px;
@@ -38,14 +42,12 @@ html {
         grid-template-areas: 
             "l m a";
         grid-gap: 3px;
-        border-bottom: 1px solid rgb(201, 212, 187);
 
         .logo {
             grid-area: l;
         }
 
         .myBSRH {
-            position: initial;
             grid-area: m;
             align-self: center;
             justify-self: right;
@@ -54,10 +56,10 @@ html {
         .advertise {
             grid-area: a;
             padding: 3px 10px;;
-            border-radius: 5px;
+            border-radius: 15.5px;
             color: #fff;
             background: rgb(255, 128, 0);
-            border: 2px solid rgb(255, 196, 118);
+            //border: 2px solid rgb(255, 196, 118);
         }
         
         .userbox {
@@ -70,7 +72,7 @@ html {
     }
 
     .searchbar {
-        grid-area: s;
+        grid-area: an;
         border-radius: 5px;
         background-color: rgb(0, 149, 248);
         display: grid;
@@ -138,8 +140,8 @@ html {
         }
     }
 
-    .new-ad-form {
-        grid-area: s;
+    .after-nav {
+        grid-area: an;
     }
 
     .new-ad-form2 {
@@ -152,6 +154,10 @@ html {
 
     .user {
         grid-area: user;
+    }
+
+    .user-edit {
+        grid-area: edit;
     }
 }
 

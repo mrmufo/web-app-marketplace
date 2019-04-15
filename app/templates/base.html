@@ -2,13 +2,13 @@
 <html>
     <head>
         <!-- FIX LOADING OF STATIC FILES -->
-        <link rel="stylesheet" type="text/css" href="static/styles/style.css?version=3.2">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">        <!-- <link rel="stylesheet" type="text/css" href="static/styles/style.css?version=3.2"> -->
     </head>
     <body>
         <div class="wrapper">
             <div class="navigation">
                 <div class="logo">
-                    <img src="static/img/logo.svg" alt="Logo">
+                    <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo">
                 </div>
                 {% if current_user.is_anonymous %}
                 <a href="{{ url_for('login') }}" class="myBSRH">Login</a>

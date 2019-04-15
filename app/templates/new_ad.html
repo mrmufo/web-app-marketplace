@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>New Ad</title>
-        <link rel="stylesheet" type="text/css" href="static/styles/style.css?version=3.2">
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="navigation">
-                <div class="logo">
-                    <img src="static/img/logo.svg" alt="Logo">
-                </div>
-                <div class="userbox ghv-center">Account name</div>
-            </div>
-            <form method="POST" action="{{ url_for('post_new_ad') }}" class="new-ad-form">
-                <div>
-                    <label for="title">Title</label>
-                    <input name="title" id="title" placeholder="Ad title">
-                </div>
-                <input type="submit" />
-                <a href="{{ url_for('index') }}" class="btn btn-primary">Go back</a>
-            </form>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="after-nav">
+    <h1>New advertisement</h1>
+    <form method="POST" action="{{ url_for('post_new_ad') }}" class="new-ad-form">
+        <div>
+            <label for="title">Title</label>
+            <input name="title" id="title" placeholder="Ad title">
         </div>
-    </body>
-</html>
+        <input type="submit" />
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Go back</a>
+    </form>
+</div>
+{% endblock %}
