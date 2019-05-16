@@ -56,7 +56,7 @@ class UserModelCase(unittest.TestCase):
         u4 = User(username='david', email='david@example.com')
         db.session.add_all([u1, u2, u3, u4])
 
-        # create four posts
+        # create four ads
         now = datetime.utcnow()
         p1 = Ad(content="ad from john", author=u1, timestamp=now + timedelta(seconds=1))
         p2 = Ad(content="ad from susan", author=u2, timestamp=now + timedelta(seconds=4))
@@ -72,7 +72,7 @@ class UserModelCase(unittest.TestCase):
         u3.follow(u4)   # mary follows david
         db.session.commit()
 
-        # check the followed posts of each user
+        # check the followed ads of each user
         f1 = u1.followed_ads().all()
         f2 = u2.followed_ads().all()
         f3 = u3.followed_ads().all()
