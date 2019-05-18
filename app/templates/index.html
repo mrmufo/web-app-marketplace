@@ -4,6 +4,17 @@
     {% block content2 %}
         <div class="greetings">
             <h1>Hi {{ current_user.username }}!</h1>
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.ad.label }}<br>
+                    {{ form.ad(cols=32, rows=4) }}<br>
+                    {% for error in form.ad.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit() }}</p>
+            </form>
             {% for ad in ads %}
             <p>{{ad.author.username }} advertised: <b>{{ ad.content }}</b></p>
             {% endfor %}

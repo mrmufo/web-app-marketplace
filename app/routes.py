@@ -12,26 +12,34 @@ from flask_login import (
     login_required
 )
 from app import app, db
-from app.forms import EditProfileForm, LoginForm, RegistrationForm
-from app.models import User
+from app.forms import EditProfileForm, LoginForm, AdForm, RegistrationForm
+from app.models import User, Ad
 from datetime import datetime
 from werkzeug.urls import url_parse
 
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
+@login_required
 def index():
+    form = AdForm()
+    if form.validate_on_submit():
+        ad = Ad(content=form.ad.data, author=current_user)
+        db.session.add(ad)
+        db.session.commit()
+        flash('New ad posted!')
+        return redirect(url_for('index'))
     ads = [
         {
             'author': {'username': 'John'},
-            'content': 'Yamaha FZ6 for sale!'
+            'content': 'I sell clothes'
         },
         {
             'author': {'username': 'Susan'},
-            'content': 'I sell nothing'
+            'content': 'Selling Yamaha FZ6'
         }
     ]
-    return render_template('index.html', title='Home Page', ads=ads)
+    return render_template('index.html', title='Home Page', form=form, ads=ads)
 
 
 @app.route('/new_ad')
