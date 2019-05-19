@@ -25,7 +25,7 @@ html {
   grid-template-columns: minmax(0px, 1fr) minmax(0, 900px) minmax(0px, 1fr);
   -ms-grid-rows: 74px 5px auto 5px auto 5px auto 5px auto 5px auto 5px auto 5px auto;
   grid-template-rows: 74px auto auto auto auto auto auto auto;
-  grid-template-areas: ". n ." ". hi ." ". an ." ". c ." ". test ." ". reg ." ". user ." ". edit ."; }
+  grid-template-areas: ". n ." ". an ." ". c ." ". hi ." ". test ." ". reg ." ". user ." ". edit ."; }
   .wrapper .navigation {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -35,27 +35,44 @@ html {
     grid-area: n;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 70px 3px minmax(150px, 1fr) 3px 120px;
-    grid-template-columns: 70px minmax(150px, 1fr) 120px;
+    -ms-grid-columns: 70px 3px minmax(100px, 1fr) 3px 100px 3px 85px 3px 120px;
+    grid-template-columns: 70px minmax(100px, 1fr) 100px 85px 120px;
     -ms-grid-rows: 70px;
     grid-template-rows: 70px;
-    grid-template-areas: "l m a";
+    grid-template-areas: "l e m logout a";
     grid-gap: 3px; }
     .wrapper .navigation .logo {
       -ms-grid-row: 1;
       -ms-grid-column: 1;
       grid-area: l; }
-    .wrapper .navigation .myBSRH {
+    .wrapper .navigation .explore {
       -ms-grid-row: 1;
       -ms-grid-column: 3;
+      grid-area: e;
+      -ms-grid-row-align: center;
+      align-self: center;
+      -ms-grid-column-align: right;
+      justify-self: right; }
+    .wrapper .navigation .myBSRH {
+      -ms-grid-row: 1;
+      -ms-grid-column: 5;
       grid-area: m;
+      -ms-grid-row-align: center;
+      align-self: center;
+      -ms-grid-column-align: right;
+      justify-self: right;
+      white-space: nowrap; }
+    .wrapper .navigation .logout {
+      -ms-grid-row: 1;
+      -ms-grid-column: 7;
+      grid-area: logout;
       -ms-grid-row-align: center;
       align-self: center;
       -ms-grid-column-align: right;
       justify-self: right; }
     .wrapper .navigation .advertise {
       -ms-grid-row: 1;
-      -ms-grid-column: 5;
+      -ms-grid-column: 9;
       grid-area: a;
       padding: 3px 10px;
       border-radius: 15.5px;
@@ -63,14 +80,14 @@ html {
       background: #ff8000; }
     .wrapper .navigation .userbox {
       -ms-grid-row: 1;
-      -ms-grid-column: 5;
+      -ms-grid-column: 9;
       grid-area: a; }
   .wrapper .greetings {
-    -ms-grid-row: 3;
+    -ms-grid-row: 7;
     -ms-grid-column: 3;
     grid-area: hi; }
   .wrapper .searchbar {
-    -ms-grid-row: 5;
+    -ms-grid-row: 3;
     -ms-grid-column: 3;
     grid-area: an;
     border-radius: 5px;
@@ -112,7 +129,7 @@ html {
       border-radius: 5px;
       margin-right: 10px; }
   .wrapper .categories {
-    -ms-grid-row: 7;
+    -ms-grid-row: 5;
     -ms-grid-column: 3;
     grid-area: c;
     background-color: #f7f7f7;
@@ -148,7 +165,7 @@ html {
         -ms-grid-column-align: left;
         justify-self: left; }
   .wrapper .after-nav {
-    -ms-grid-row: 5;
+    -ms-grid-row: 3;
     -ms-grid-column: 3;
     grid-area: an; }
   .wrapper .new-ad-form2 {

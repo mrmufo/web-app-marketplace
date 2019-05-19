@@ -1,6 +1,11 @@
 <table>
     <tr valign="top">
         <td><img src="{{ ad.author.avatar(36) }}"></td>
-        <td>{{ ad.author.username }} says:<br>{{ ad.content }}</td>
+        <td>
+            <a href="{{ url_for('user', username=ad.author.username) }}">
+                {{ ad.author.username }}
+            </a>
+            advertised:<br>{{ ad.content }}
+        </td>
     </tr>
 </table>

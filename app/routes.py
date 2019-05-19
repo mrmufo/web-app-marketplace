@@ -29,16 +29,7 @@ def index():
         db.session.commit()
         flash('New ad posted!')
         return redirect(url_for('index'))
-    ads = [
-        {
-            'author': {'username': 'John'},
-            'content': 'I sell clothes'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'content': 'Selling Yamaha FZ6'
-        }
-    ]
+    ads = current_user.followed_ads().all()
     return render_template('index.html', title='Home Page', form=form, ads=ads)
 
 
@@ -125,6 +116,13 @@ def edit_profile():
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html', title='Edit Profile', form=form)
+
+
+@app.route('/explore')
+@login_required
+def explore():
+    ads = Ad.query.order_by(Ad.timestamp.desc()).all()
+    return render_template('index.html', title='Explore', ads=ads)
 
 
 @app.route('/follow/<username>')

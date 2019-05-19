@@ -10,11 +10,14 @@
                 <div class="logo">
                     <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo">
                 </div>
+                <a href="{{ url_for('explore') }}" class="explore">Expolore</a>
                 {% if current_user.is_anonymous %}
                 <a href="{{ url_for('login') }}" class="myBSRH">Login</a>
                 {% else %}
                 <div class="myBSRH">
                     <a href="{{ url_for('user', username=current_user.username) }}">My BSRH</a>
+                </div>
+                <div class="logout">
                     <a href="{{ url_for('logout') }}">Logout</a>
                 </div>
                 {% endif %}

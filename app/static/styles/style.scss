@@ -23,9 +23,9 @@ html {
     grid-template-rows: 74px auto auto auto auto auto auto auto;
     grid-template-areas: 
         ". n ."
-        ". hi ."
         ". an ."
         ". c ."
+        ". hi ."
         ". test ."
         ". reg ."
         ". user ."
@@ -37,18 +37,31 @@ html {
         border: 2px solid rgb(255, 196, 118);
         grid-area: n;
         display: grid;
-        grid-template-columns: 70px minmax(150px, 1fr) 120px;
+        grid-template-columns: 70px minmax(100px, 1fr) 100px 85px 120px; //Fix sizing when user not logged in
         grid-template-rows: 70px;
         grid-template-areas: 
-            "l m a";
+            "l e m logout a";
         grid-gap: 3px;
 
         .logo {
             grid-area: l;
         }
 
+        .explore {
+            grid-area: e;
+            align-self: center;
+            justify-self: right;
+        }
+
         .myBSRH {
             grid-area: m;
+            align-self: center;
+            justify-self: right;
+            white-space: nowrap;
+        }
+
+        .logout {
+            grid-area: logout;
             align-self: center;
             justify-self: right;
         }
@@ -59,7 +72,6 @@ html {
             border-radius: 15.5px;
             color: #fff;
             background: rgb(255, 128, 0);
-            //border: 2px solid rgb(255, 196, 118);
         }
         
         .userbox {
