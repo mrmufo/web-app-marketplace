@@ -29,8 +29,14 @@ def index():
         db.session.commit()
         flash('New ad posted!')
         return redirect(url_for('index'))
-    ads = current_user.followed_ads().all()
-    return render_template('index.html', title='Home Page', form=form, ads=ads)
+    page = request.args.get('page', 1, type=int)
+    ads = current_user.followed_ads().paginate(page, app.config['ADS_PER_PAGE'], False)
+    next_url = url_for('index', page=ads.next_num) \
+        if ads.has_next else None
+    prev_url = url_for('index', page=ads.prev_num) \
+        if ads.has_prev else None
+    return render_template('index.html', title='Home Page', form=form, ads=ads.items,
+                           next_url=next_url, prev_url=prev_url)
 
 
 @app.route('/new_ad')
@@ -88,11 +94,14 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    ads = [
-        {'author': user, 'content': 'Test post #1'},
-        {'author': user, 'content': 'Test post #2'}
-    ]
-    return render_template('user.html', user=user, ads=ads)
+    page = request.args.get('page', 1, type=int)
+    ads = user.ads.order_by(Ad.timestamp.desc()).paginate(page, app.config['ADS_PER_PAGE'], False)
+    next_url = url_for('user', username=user.username, page=ads.next_num) \
+        if ads.has_next else None
+    prev_url = url_for('user', username=user.username, page=ads.prev_num) \
+        if ads.has_prev else None
+    return render_template('user.html', user=user, ads=ads.items,
+                           next_url=next_url, prev_url=prev_url)
 
 
 @app.before_request
@@ -121,8 +130,14 @@ def edit_profile():
 @app.route('/explore')
 @login_required
 def explore():
-    ads = Ad.query.order_by(Ad.timestamp.desc()).all()
-    return render_template('index.html', title='Explore', ads=ads)
+    page = request.args.get('page', 1, type=int)
+    ads = Ad.query.order_by(Ad.timestamp.desc()).paginate(page, app.config['ADS_PER_PAGE'], False)
+    next_url = url_for('explore', page=ads.next_num) \
+        if ads.has_next else None
+    prev_url = url_for('explore', page=ads.prev_num) \
+        if ads.has_prev else None
+    return render_template('index.html', title='Explore', ads=ads.items,
+                           next_url=next_url, prev_url=prev_url)
 
 
 @app.route('/follow/<username>')

@@ -43,6 +43,12 @@
         {% for ad in ads %}
             {% include '_ad.html' %}
         {% endfor %}
+        {% if prev_url %}
+        <a href="{{ prev_url }}">Newer ads</a>
+        {% endif %}
+        {% if next_url %}
+        <a href="{{ next_url }}">Older ads</a>
+        {% endif %}
     </div>
     {% endblock %}
 {% endblock %}
