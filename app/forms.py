@@ -30,6 +30,11 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Email address already exists. Please choose a different one.')
 
 
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Request Password Reset')
+
+
 class AdForm(FlaskForm):
     ad = TextAreaField('Description', validators=[
         DataRequired(), Length(min=1, max=140)])

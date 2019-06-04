@@ -12,7 +12,8 @@ from flask_login import (
     login_required
 )
 from app import app, db
-from app.forms import EditProfileForm, LoginForm, AdForm, RegistrationForm
+from app.forms import EditProfileForm, LoginForm, AdForm, RegistrationForm, ResetPasswordRequestForm
+#  from app.email import send_password_reset_email
 from app.models import User, Ad
 from datetime import datetime
 from werkzeug.urls import url_parse
