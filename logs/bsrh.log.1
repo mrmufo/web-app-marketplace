@@ -1,74 +1,89 @@
-2019-04-28 13:57:44,016 ERROR: Exception on /edit_profile [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1761]
+2019-07-01 16:22:57,479 ERROR: Exception on /reset_password_request [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1236, in _execute_context
-    cursor, statement, parameters, context
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 536, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
     raise value
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/mufo/FlaskProjects/BSRH/app/routes.py", line 113, in edit_profile
-    db.session.commit()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1023, in commit
-    self.transaction.commit()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 487, in commit
-    self._prepare_impl()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 466, in _prepare_impl
-    self.session.flush()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2436, in flush
-    self._flush(objects)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2574, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 67, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 277, in reraise
+  File "/home/mufo/FlaskProjects/BSRH/app/routes.py", line 102, in reset_password_request
+    send_password_reset_email(user)
+  File "/home/mufo/FlaskProjects/BSRH/app/email.py", line 21, in send_password_reset_email
+    user=user, token=token))
+  File "/home/mufo/FlaskProjects/BSRH/app/email.py", line 10, in send_email
+    mail.send(msg)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "/usr/lib/python3.6/smtplib.py", line 697, in login
+    "SMTP AUTH extension not supported by server.")
+smtplib.SMTPNotSupportedError: SMTP AUTH extension not supported by server.
+2019-07-01 16:29:12,054 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:49]
+2019-07-01 17:00:06,318 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:49]
+2019-07-01 17:00:35,019 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:49]
+2019-07-01 17:03:27,002 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NSwiZXhwIjoxNTYxOTk3NDQ1LjQ4MTg4M30.5mpTP1YyfR6xamn1P7gOB8-TN1EhQGKYIXzxI9C6fiY [GET] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
     raise value
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2534, in _flush
-    flush_context.execute()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 416, in execute
-    rec.execute(self)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 583, in execute
-    uow,
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
-    update,
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 976, in _emit_update_statements
-    statement, multiparams
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 980, in execute
-    return meth(self, multiparams, params)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 273, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1099, in _execute_clauseelement
-    distilled_params,
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1240, in _execute_context
-    e, statement, parameters, cursor, context
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1458, in _handle_dbapi_exception
-    util.raise_from_cause(sqlalchemy_exception, exc_info)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 296, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 276, in reraise
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mufo/FlaskProjects/BSRH/app/routes.py", line 122, in reset_password
+    return render_template('reset_password.html', form=form)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1236, in _execute_context
-    cursor, statement, parameters, context
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 536, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: ('susan', 'I a zbyszek and y keyboard is fuked', 2)] (Background on this error at: http://sqlalche.me/e/gkpj)
-2019-04-28 14:38:39,584 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
-2019-04-28 14:38:40,060 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+  File "/home/mufo/FlaskProjects/BSRH/app/templates/reset_password.html", line 10, in template
+    {% for error in form.password.errors" %}
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
+    body = self.parse_statements(('name:endfor', 'name:else'))
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/parser.py", line 164, in parse_statements
+    self.stream.expect('block_end')
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'string'
