@@ -5,7 +5,9 @@
             <a href="{{ url_for('user', username=ad.author.username) }}">
                 {{ ad.author.username }}
             </a>
-            advertised:<br>{{ ad.content }}
+            advertised {{ moment(ad.timestamp).fromNow() }}:
+            <br>
+            {{ ad.content }}
         </td>
     </tr>
 </table>

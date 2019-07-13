@@ -6,24 +6,32 @@
         <input type="text" id="region" name="region">
         <button>Search</button>
     </div>
-    <ul class="categories">
-        <li class="category"><img src="static/img/category_car.svg"><span>Motors</span></li>
-        <li class="category"><img src="static/img/category_properties.svg"><span>Properties</span></li>
-        <li class="category"><img src="static/img/category_work.svg"><span>Job</span></li>
-        <li class="category"><img src="static/img/category_house_garden.svg"><span>House & Garden</span></li>
-        <li class="category"><img src="static/img/category_electronics.svg"><span>Electronics</span></li>
-        <li class="category"><img src="static/img/category_fashion.svg"><span>Fashion</span></li>
-        <li class="category"><img src="static/img/category_agriculture.svg"><span>Agriculture</span></li>
-        <li class="category"><img src="static/img/category_animals.svg"><span>Animals</span></li>
-        <li class="category"><img src="static/img/category_kids.svg"><span>Kids</span></li>
-        <li class="category"><img src="static/img/category_sport.svg"><span>Sport & Hobby</span></li>
-        <li class="category"><img src="static/img/category_music.svg"><span>Music & Education</span></li>
-        <li class="category"><img src="static/img/category_services.svg"><span>Services</span></li>
-        <li class="category"><img src="static/img/category_wedding.svg"><span>Wedding</span></li>
-        <li class="category"><img src="static/img/category_free.svg"><span>Free</span></li>
-        <li class="category"><img src="static/img/category_swap.svg"><span>Swap</span></li>
-        <li class="category"><img src="static/img/category_find_engineer.svg"><span>Find specialist</span></li>
-    </ul>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-3"><img src="static/img/category_car.svg" style="height: 25px;">Motors</div>
+            <div class="col-md-3"><img src="static/img/category_properties.svg" style="height: 25px;">Properties</div>
+            <div class="col-md-3"><img src="static/img/category_work.svg" style="height: 25px;">Job</div>
+            <div class="col-md-3"><img src="static/img/category_house_garden.svg" style="height: 25px;">House & Garden</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3"><img src="static/img/category_electronics.svg" style="height: 25px;">Electronics</div>
+            <div class="col-md-3"><img src="static/img/category_fashion.svg" style="height: 25px;">Fashion</div>
+            <div class="col-md-3"><img src="static/img/category_agriculture.svg" style="height: 25px;">Agriculture</div>
+            <div class="col-md-3"><img src="static/img/category_animals.svg" style="height: 25px;">Animals</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3"><img src="static/img/category_kids.svg" style="height: 25px;">Kids</div>
+            <div class="col-md-3"><img src="static/img/category_sport.svg" style="height: 25px;">Sport & Hobby</div>
+            <div class="col-md-3"><img src="static/img/category_music.svg" style="height: 25px;">Music & Education</div>
+            <div class="col-md-3"><img src="static/img/category_services.svg" style="height: 25px;">Services</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3"><img src="static/img/category_wedding.svg" style="height: 25px;">Wedding</div>
+            <div class="col-md-3"><img src="static/img/category_free.svg" style="height: 25px;">Free</div>
+            <div class="col-md-3"><img src="static/img/category_swap.svg" style="height: 25px;">Swap</div>
+            <div class="col-md-3"><img src="static/img/category_find_engineer.svg" style="height: 25px;">Find specialist</div>
+        </div>
+    </div>
     {% block content2 %}
     <div class="greetings">
         <h1>Hi {{ current_user.username }}!</h1>
