@@ -1,6 +1,10 @@
-<table>
-    <tr valign="top">
-        <td><img src="{{ ad.author.avatar(36) }}"></td>
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username=ad.author.username) }}">
+                <img src="{{ ad.author.avatar(70) }}" />
+            </a>
+        </td>
         <td>
             <a href="{{ url_for('user', username=ad.author.username) }}">
                 {{ ad.author.username }}

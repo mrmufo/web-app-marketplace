@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
     <div class="searchbar">
         <input type="text" id="search" name="search">
         <input type="text" id="region" name="region">
@@ -32,31 +33,25 @@
             <div class="col-md-3"><img src="static/img/category_find_engineer.svg" style="height: 25px;">Find specialist</div>
         </div>
     </div>
-    {% block content2 %}
-    <div class="greetings">
-        <h1>Hi {{ current_user.username }}!</h1>
-        {% if form %}
-        <form action="" method="post">
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.ad.label }}<br>
-                {{ form.ad(cols=32, rows=4) }}<br>
-                {% for error in form.ad.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>{{ form.submit() }}</p>
-        </form>
-        {% endif %}
-        {% for ad in ads %}
-            {% include '_ad.html' %}
-        {% endfor %}
-        {% if prev_url %}
-        <a href="{{ prev_url }}">Newer ads</a>
-        {% endif %}
-        {% if next_url %}
-        <a href="{{ next_url }}">Older ads</a>
-        {% endif %}
-    </div>
-    {% endblock %}
+    <h1>Hi {{ current_user.username }}!</h1>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    <br>
+    {% endif %}
+    {% for ad in ads %}
+        {% include '_ad.html' %}
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer ads
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older posts <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
 {% endblock %}
