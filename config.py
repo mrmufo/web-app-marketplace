@@ -16,3 +16,4 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['buysellrenthire@gmail.com']
     ADS_PER_PAGE = 3
+    LANGUAGES = ['en', 'es']
