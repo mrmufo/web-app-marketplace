@@ -33,7 +33,7 @@
             <div class="col-md-3"><img src="static/img/category_find_engineer.svg" style="height: 25px;">Find specialist</div>
         </div>
     </div>
-    <h1>Hi {{ current_user.username }}!</h1>
+    <h1>{{ _('Hi %(username)s', username=current_user.username) }}!</h1>
     {% if form %}
     {{ wtf.quick_form(form) }}
     <br>
@@ -45,12 +45,12 @@
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">
                 <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> Newer ads
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer ads') }}
                 </a>
             </li>
             <li class="next{% if not next_url %} disabled{% endif %}">
                 <a href="{{ next_url or '#' }}">
-                    Older posts <span aria-hidden="true">&rarr;</span>
+                    {{ _('Older ads') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
         </ul>

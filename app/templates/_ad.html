@@ -6,10 +6,12 @@
             </a>
         </td>
         <td>
-            <a href="{{ url_for('user', username=ad.author.username) }}">
-                {{ ad.author.username }}
-            </a>
-            advertised {{ moment(ad.timestamp).fromNow() }}:
+            {% set user_link %}
+                <a href="{{ url_for('user', username=ad.author.username) }}">
+                    {{ ad.author.username }}
+                </a>
+            {% endset %}
+            {{ _('%(username)s said %(when)s', username=user_link, when=moment(ad.timestamp).fromNow()) }}
             <br>
             {{ ad.content }}
         </td>

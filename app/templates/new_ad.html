@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-<div class="after-nav">
-    <h1>New advertisement</h1>
+    <h1>{{ _('New advertisement') }}</h1>
     <form method="POST" action="{{ url_for('post_new_ad') }}" class="new-ad-form">
         <div>
-            <label for="title">Title</label>
+            <label for="title">{{ _('Title') }}</label>
             <input name="title" id="title" placeholder="Ad title">
         </div>
         <input type="submit" />
-        <a href="{{ url_for('index') }}" class="btn btn-primary">Go back</a>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">{{ _('Go back') }}</a>
     </form>
-</div>
 {% endblock %}
