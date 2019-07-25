@@ -1,0 +1,251 @@
+# Polish translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-07-25 15:29+0100\n"
+"PO-Revision-Date: 2019-07-25 20:58+0100\n"
+"Language-Team: pl <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+"X-Generator: Poedit 2.0.7\n"
+"Last-Translator: \n"
+"Language: pl\n"
+
+#: app/__init__.py:23
+msgid "Please log in to access this page."
+msgstr "Zaloguj się aby mieć dostęp do tej strony."
+
+#: app/email.py:22
+msgid "[BuySellRentHire] Reset Your Password"
+msgstr "[BuySellRentHire] Zresetuj swoje hasło"
+
+#: app/forms.py:9 app/forms.py:16 app/forms.py:53
+msgid "Username"
+msgstr "Nazwa użytkownika"
+
+#: app/forms.py:10 app/forms.py:18 app/forms.py:35
+msgid "Password"
+msgstr "Hasło"
+
+#: app/forms.py:11
+msgid "Remember Me"
+msgstr "Zapamiętaj mnie"
+
+#: app/forms.py:12
+msgid "Sign In"
+msgstr "Zaloguj się"
+
+#: app/forms.py:17 app/forms.py:42
+msgid "Email"
+msgstr "Email"
+
+#: app/forms.py:20 app/forms.py:37
+msgid "Repeat Password"
+msgstr "Powtórz hasło"
+
+#: app/forms.py:21 app/routes.py:101 app/templates/register.html:5
+msgid "Register"
+msgstr "Zarejestruj się"
+
+#: app/forms.py:26
+msgid "Username already exists. Please choose a different one."
+msgstr "Nazwa użytkownika jest zajęta. Proszę wybrać inną."
+
+#: app/forms.py:31
+msgid "Email address already exists. Please choose a different one."
+msgstr "Adres email jest zajęty. Proszę wybrać inny."
+
+#: app/forms.py:38 app/forms.py:43
+msgid "Request Password Reset"
+msgstr "Zresetuj hasło"
+
+#: app/forms.py:47
+msgid "Description"
+msgstr "Opis"
+
+#: app/forms.py:49 app/forms.py:55
+msgid "Submit"
+msgstr "Potwierdź"
+
+#: app/forms.py:54
+msgid "About me"
+msgstr "O mnie"
+
+#: app/forms.py:65
+msgid "Please choose a different username."
+msgstr "Proszę wybrać inną nazwę użytkownika."
+
+#: app/routes.py:41
+msgid "New ad posted!"
+msgstr "Dodano nowe ogłoszenie!"
+
+#: app/routes.py:49 app/templates/base.html:22
+msgid "Home"
+msgstr "Strona główna"
+
+#: app/routes.py:72
+msgid "Invalid username or password"
+msgstr "Niepoprawna nazwa użytkownika lub hasło"
+
+#: app/routes.py:80
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#: app/routes.py:99
+msgid "Great, your account has been created! You can BSRH now!"
+msgstr "Świetnie! Twoje konto zostało utworzone!"
+
+#: app/routes.py:113
+msgid "Check your email for the instructions to reset your password"
+msgstr "Na Twój adres email wysłano instrukcję do zresetowania hasła"
+
+#: app/routes.py:115 app/templates/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Zresetuj hasło"
+
+#: app/routes.py:130
+msgid "Your password has been reset."
+msgstr "Twoje hasło zostało zresetowane."
+
+#: app/routes.py:157
+msgid "Your changes have been saved."
+msgstr "Zmiany zostały zapisane."
+
+#: app/routes.py:162 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Edytuj profil"
+
+#: app/routes.py:183 app/routes.py:199
+#, python-format
+msgid "User %(username)s not found."
+msgstr "Nie znaleziono użytkownika %(username)s."
+
+#: app/routes.py:186
+msgid "You cannot follow yourself!"
+msgstr "Nie możesz obserwować samego siebie!"
+
+#: app/routes.py:190
+#, python-format
+msgid "You are following %(username)s!"
+msgstr "Obserwujesz %(username)s!"
+
+#: app/routes.py:202
+msgid "You cannot unfollow yourself!"
+msgstr "Nie możesz siebie odzobaczyć!"
+
+#: app/routes.py:206
+#, python-format
+msgid "You are not following %(username)s anymore"
+msgstr "Nie obserwujesz już użytkownika %(username)s"
+
+#: app/templates/404.html:4
+msgid "Not Found"
+msgstr "Nie znaleziono"
+
+#: app/templates/404.html:5 app/templates/500.html:6
+msgid "Back"
+msgstr "Cofnij"
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occured"
+msgstr "Wystąpił niespodziewany błąd"
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience."
+msgstr "Administrator strony został powiadomiony. Przepraszamy za utrudnienia."
+
+#: app/templates/_ad.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s napisał %(when)s"
+
+#: app/templates/base.html:4
+msgid "Welcome to"
+msgstr "Witaj w"
+
+#: app/templates/base.html:23
+msgid "Explore"
+msgstr "Odkrywaj"
+
+#: app/templates/base.html:27
+msgid "Login"
+msgstr "Zaloguj się"
+
+#: app/templates/base.html:29
+msgid "My"
+msgstr "Mój profil"
+
+#: app/templates/base.html:30
+msgid "Logout"
+msgstr "Wyloguj się"
+
+#: app/templates/base.html:32
+msgid "Advertise"
+msgstr "Dodaj ogłoszenie"
+
+#: app/templates/index.html:36
+#, python-format
+msgid "Hi %(username)s"
+msgstr "Czołem %(username)s"
+
+#: app/templates/index.html:48 app/templates/user.html:29
+msgid "Newer ads"
+msgstr "Nowsze ogłoszenia"
+
+#: app/templates/index.html:53 app/templates/user.html:34
+msgid "Older ads"
+msgstr "Starsze ogłoszenia"
+
+#: app/templates/new_ad.html:4
+msgid "New advertisement"
+msgstr "Nowe ogłoszenie"
+
+#: app/templates/new_ad.html:7
+msgid "Title"
+msgstr "Tytuł"
+
+#: app/templates/new_ad.html:11
+msgid "Go back"
+msgstr "Cofnij"
+
+#: app/templates/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Zresetuj hasło"
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr "Użytkownik"
+
+#: app/templates/user.html:11
+msgid "Last seen on"
+msgstr "Ostatnio widziano"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d obserwujących"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d following"
+msgstr "%(count)d obserwowanych"
+
+#: app/templates/user.html:15
+msgid "Edit your profile"
+msgstr "Edytuj profil"
+
+#: app/templates/user.html:17
+msgid "Follow"
+msgstr "Obserwuj"
+
+#: app/templates/user.html:19
+msgid "Unfollow"
+msgstr "Przestań obserwować"

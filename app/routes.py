@@ -77,7 +77,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
         return redirect(next_page)
-    return render_template('login.html', title=_('Sign in'), form=form)
+    return render_template('login.html', title=_('Sign In'), form=form)
 
 
 @app.route('/logout')
@@ -112,8 +112,7 @@ def reset_password_request():
             send_password_reset_email(user)
         flash(_('Check your email for the instructions to reset your password'))
         return redirect(url_for('login'))
-    return render_template('reset_password_request.html', title=_('Reset Password'),
-                               form=form)
+    return render_template('reset_password_request.html', title=_('Reset Password'), form=form)
  
 
 @app.route('/reset_password/<token>', methods=['GET', 'POST'])
