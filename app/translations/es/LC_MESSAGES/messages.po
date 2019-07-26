@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-25 15:29+0100\n"
+"POT-Creation-Date: 2019-07-26 19:13+0100\n"
 "PO-Revision-Date: 2019-07-25 15:55+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Remember Me"
 msgstr ""
 
-#: app/forms.py:12
+#: app/forms.py:12 app/routes.py:80 app/templates/login.html:5
 msgid "Sign In"
 msgstr ""
 
@@ -50,7 +50,8 @@ msgstr ""
 msgid "Repeat Password"
 msgstr ""
 
-#: app/forms.py:21 app/routes.py:101 app/templates/register.html:5
+#: app/forms.py:21 app/routes.py:101 app/templates/login.html:18
+#: app/templates/register.html:5
 msgid "Register"
 msgstr ""
 
@@ -94,10 +95,6 @@ msgstr ""
 msgid "Invalid username or password"
 msgstr ""
 
-#: app/routes.py:80
-msgid "Sign in"
-msgstr ""
-
 #: app/routes.py:99
 msgid "Great, your account has been created! You can BSRH now!"
 msgstr ""
@@ -110,37 +107,37 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: app/routes.py:130
+#: app/routes.py:129
 msgid "Your password has been reset."
 msgstr ""
 
-#: app/routes.py:157
+#: app/routes.py:156
 msgid "Your changes have been saved."
 msgstr ""
 
-#: app/routes.py:162 app/templates/edit_profile.html:5
+#: app/routes.py:161 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr ""
 
-#: app/routes.py:183 app/routes.py:199
+#: app/routes.py:182 app/routes.py:198
 #, python-format
 msgid "User %(username)s not found."
 msgstr ""
 
-#: app/routes.py:186
+#: app/routes.py:185
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/routes.py:190
+#: app/routes.py:189
 #, python-format
 msgid "You are following %(username)s!"
 msgstr ""
 
-#: app/routes.py:202
+#: app/routes.py:201
 msgid "You cannot unfollow yourself!"
 msgstr ""
 
-#: app/routes.py:206
+#: app/routes.py:205
 #, python-format
 msgid "You are not following %(username)s anymore"
 msgstr ""
@@ -203,6 +200,18 @@ msgstr ""
 msgid "Older ads"
 msgstr ""
 
+#: app/templates/login.html:13
+msgid "Forgot your password?"
+msgstr ""
+
+#: app/templates/login.html:14
+msgid "Reset password"
+msgstr ""
+
+#: app/templates/login.html:17
+msgid "Do not have an account yet?"
+msgstr ""
+
 #: app/templates/new_ad.html:4
 msgid "New advertisement"
 msgstr ""
@@ -248,4 +257,7 @@ msgstr ""
 #: app/templates/user.html:19
 msgid "Unfollow"
 msgstr ""
+
+#~ msgid "Sign in"
+#~ msgstr ""
 
