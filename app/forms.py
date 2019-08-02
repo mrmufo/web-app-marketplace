@@ -43,11 +43,6 @@ class ResetPasswordRequestForm(FlaskForm):
     submit = SubmitField(_l('Request Password Reset'))
 
 
-class AdForm(FlaskForm):
-    ad = TextAreaField(_l('Description'), validators=[DataRequired(), Length(min=1, max=140)])
-    submit = SubmitField(_l('Submit'))
-
-
 class EditProfileForm(FlaskForm):
     username = StringField(_l('Username'), validators=[DataRequired()])
     about_me = TextAreaField(_l('About me'), validators=[Length(min=0, max=140)])
@@ -64,7 +59,7 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError(_('Please choose a different username.'))
 
 
-class NewAdForm(FlaskForm):
+class AdForm(FlaskForm):
     title = StringField(_l('Title'), validators=[DataRequired(), Length(min=3, max=50)])
     category = StringField(_l('Category'), validators=[DataRequired()])
     content = StringField(_l('Description'), validators=[DataRequired(), Length(min=1, max=1500)])

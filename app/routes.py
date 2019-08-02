@@ -17,7 +17,7 @@ from flask_babel import _, get_locale
 from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import (
-    EditProfileForm, LoginForm, AdForm, NewAdForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
+    EditProfileForm, LoginForm, AdForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
 )
 from app.email import send_password_reset_email
 from app.models import User, Ad
@@ -31,31 +31,23 @@ def before_request():
     g.locale = str(get_locale())
 
 
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 @login_required
 def index():
-    form = AdForm()
-    if form.validate_on_submit():
-        ad = Ad(content=form.ad.data, author=current_user)
-        db.session.add(ad)
-        db.session.commit()
-        flash(_('New ad posted!'))
-        return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
     ads = current_user.followed_ads().paginate(page, app.config['ADS_PER_PAGE'], False)
     next_url = url_for('index', page=ads.next_num) \
         if ads.has_next else None
     prev_url = url_for('index', page=ads.prev_num) \
         if ads.has_prev else None
-    return render_template('index.html', title=_('Home'), form=form, ads=ads.items,
-                           next_url=next_url, prev_url=prev_url)
+    return render_template('index.html', title=_('Home'), ads=ads.items, next_url=next_url, prev_url=prev_url)
 
 
 @app.route('/new_ad', methods=['GET', 'POST'])
 @login_required
 def new_ad():
-    form = NewAdForm()
+    form = AdForm()
     if form.validate_on_submit():
         new_advertisement = Ad(
             title=form.title.data, category=form.category.data, content=form.content.data, author=current_user)
@@ -63,7 +55,7 @@ def new_ad():
         db.session.commit()
         flash(_('New ad posted!'))
         return redirect(url_for('index'))
-    return render_template('new_ad.html', title=_('Post an ad'), form=form)
+    return render_template('new_ad.html', title=_('Post new ad'), form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
