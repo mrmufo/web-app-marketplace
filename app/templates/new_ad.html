@@ -1,13 +1,11 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
     <h1>{{ _('New advertisement') }}</h1>
-    <form method="POST" action="{{ url_for('post_new_ad') }}" class="new-ad-form">
-        <div>
-            <label for="title">{{ _('Title') }}</label>
-            <input name="title" id="title" placeholder="Ad title">
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
         </div>
-        <input type="submit" />
-        <a href="{{ url_for('index') }}" class="btn btn-primary">{{ _('Go back') }}</a>
-    </form>
+    </div>
 {% endblock %}

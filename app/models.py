@@ -78,6 +78,7 @@ class Ad(db.Model):
     content = db.Column(db.String(512))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    category = db.Column(db.String(32))
 
     def __repr__(self):
         return '<Post {}>'.format(self.content)

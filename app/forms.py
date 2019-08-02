@@ -44,8 +44,7 @@ class ResetPasswordRequestForm(FlaskForm):
 
 
 class AdForm(FlaskForm):
-    ad = TextAreaField(_l('Description'), validators=[
-        DataRequired(), Length(min=1, max=140)])
+    ad = TextAreaField(_l('Description'), validators=[DataRequired(), Length(min=1, max=140)])
     submit = SubmitField(_l('Submit'))
 
 
@@ -63,3 +62,10 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError(_('Please choose a different username.'))
+
+
+class NewAdForm(FlaskForm):
+    title = StringField(_l('Title'), validators=[DataRequired(), Length(min=3, max=50)])
+    category = StringField(_l('Category'), validators=[DataRequired()])
+    content = StringField(_l('Description'), validators=[DataRequired(), Length(min=1, max=1500)])
+    submit = SubmitField(_l('Submit'))

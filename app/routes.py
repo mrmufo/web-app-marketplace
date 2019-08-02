@@ -16,7 +16,9 @@ from flask_login import (
 from flask_babel import _, get_locale
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import EditProfileForm, LoginForm, AdForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
+from app.forms import (
+    EditProfileForm, LoginForm, AdForm, NewAdForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
+)
 from app.email import send_password_reset_email
 from app.models import User, Ad
 
@@ -50,15 +52,18 @@ def index():
                            next_url=next_url, prev_url=prev_url)
 
 
-@app.route('/new_ad')
+@app.route('/new_ad', methods=['GET', 'POST'])
 @login_required
-def new_ad_form():
-    return render_template('new_ad.html')
-
-
-@app.route('/new_ad', methods=['POST'])
-def post_new_ad():
-    return redirect(url_for('index'))
+def new_ad():
+    form = NewAdForm()
+    if form.validate_on_submit():
+        new_advertisement = Ad(
+            title=form.title.data, category=form.category.data, content=form.content.data, author=current_user)
+        db.session.add(new_advertisement)
+        db.session.commit()
+        flash(_('New ad posted!'))
+        return redirect(url_for('index'))
+    return render_template('new_ad.html', title=_('Post an ad'), form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
