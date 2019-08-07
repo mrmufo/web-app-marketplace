@@ -2,11 +2,8 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <div class="searchbar">
-        <input type="text" id="search" name="search">
-        <input type="text" id="region" name="region">
-        <button>Search</button>
-    </div>
+    <h1>{{ _('Hi %(username)s', username=current_user.username) }}!</h1>
+    <br>
     <div class="container">
         <div class="row mb-3">
             <div class="col-md-3"><img src="static/img/category_car.svg" style="height: 25px;">Motors</div>
@@ -33,11 +30,7 @@
             <div class="col-md-3"><img src="static/img/category_find_engineer.svg" style="height: 25px;">Find specialist</div>
         </div>
     </div>
-    <h1>{{ _('Hi %(username)s', username=current_user.username) }}!</h1>
-    {% if form %}
-    {{ wtf.quick_form(form) }}
-    <br>
-    {% endif %}
+
     {% for ad in ads %}
         {% include '_ad.html' %}
     {% endfor %}
