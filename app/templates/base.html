@@ -1,4 +1,8 @@
 {% extends 'bootstrap/base.html' %}
+{% block styles %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('.static', filename='styles/style.css')}}">
+{% endblock %}
 
 {% block title %}
     {% if title %}{{ title }} - BuySellRentHire{% else %}{{ _('Welcome to') }} BuySellRentHire{% endif %}
@@ -6,7 +10,7 @@
 
 {% block navbar %}
     <nav class="navbar navbar-default justify-content-between">
-        <div class="container">
+        <div class="container text-center">
             <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -23,7 +27,7 @@
                     <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
                     <li><a href="{{ url_for('explore') }}">{{ _('Explore') }}</a></li>
                 </ul>
-                <form class="form-inline" style="display: inline-block; height: 50px;">
+                <form class="form-inline" style="display: inline-block; margin-top:8px;">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -37,7 +41,6 @@
                     <li><a href="{{ url_for('new_ad') }}">+ {{ _('Advertise') }}</a></li>
                 </ul>
             </div>
-                
         </div>
     </nav>
 {% endblock %}

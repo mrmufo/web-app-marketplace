@@ -2,32 +2,37 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Hi %(username)s', username=current_user.username) }}!</h1>
+    <h1 class="text-center">{{ _('Hi %(username)s', username=current_user.username) }}!</h1>
     <br>
-    <div class="container">
-        <div class="row mb-3">
-            <div class="col-md-3"><img src="static/img/category_car.svg" style="height: 25px;">Motors</div>
-            <div class="col-md-3"><img src="static/img/category_properties.svg" style="height: 25px;">Properties</div>
-            <div class="col-md-3"><img src="static/img/category_work.svg" style="height: 25px;">Job</div>
-            <div class="col-md-3"><img src="static/img/category_house_garden.svg" style="height: 25px;">House & Garden</div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3"><img src="static/img/category_electronics.svg" style="height: 25px;">Electronics</div>
-            <div class="col-md-3"><img src="static/img/category_fashion.svg" style="height: 25px;">Fashion</div>
-            <div class="col-md-3"><img src="static/img/category_agriculture.svg" style="height: 25px;">Agriculture</div>
-            <div class="col-md-3"><img src="static/img/category_animals.svg" style="height: 25px;">Animals</div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3"><img src="static/img/category_kids.svg" style="height: 25px;">Kids</div>
-            <div class="col-md-3"><img src="static/img/category_sport.svg" style="height: 25px;">Sport & Hobby</div>
-            <div class="col-md-3"><img src="static/img/category_music.svg" style="height: 25px;">Music & Education</div>
-            <div class="col-md-3"><img src="static/img/category_services.svg" style="height: 25px;">Services</div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-3"><img src="static/img/category_wedding.svg" style="height: 25px;">Wedding</div>
-            <div class="col-md-3"><img src="static/img/category_free.svg" style="height: 25px;">Free</div>
-            <div class="col-md-3"><img src="static/img/category_swap.svg" style="height: 25px;">Swap</div>
-            <div class="col-md-3"><img src="static/img/category_find_engineer.svg" style="height: 25px;">Find specialist</div>
+    <div class="container categories">
+        <div class="row text-center">
+            <div class="col-xs-3">
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_car.svg">Motors</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_properties.svg">Properties</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_work.svg">Job</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_house_garden.svg">House & Garden</a>
+            </div>
+
+            <div class="col-xs-3">
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_electronics.svg">Electronics</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_fashion.svg">Fashion</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_agriculture.svg">Agriculture</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_animals.svg">Animals</a>
+            </div>
+
+            <div class="col-xs-3">
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_kids.svg">Kids</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_sport.svg">Sport & Hobby</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_music.svg">Music & Education</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_services.svg">Services</a>
+            </div>
+
+            <div class="col-xs-3">
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_wedding.svg">Wedding</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_free.svg">Free</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_swap.svg">Swap</a>
+            <a class="col-md-3 btn btn-default btn-block" href="#" role="button"><img src="static/img/category_find_engineer.svg">Find specialist</a>
+            </div>
         </div>
     </div>
 
