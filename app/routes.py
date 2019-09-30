@@ -50,12 +50,12 @@ def new_ad():
     form = AdForm()
     if form.validate_on_submit():
         new_advertisement = Ad(
-            title=form.title.data, category=form.category.data, content=form.content.data, author=current_user)
+            title=form.title.data, category=form.category.data, description=form.description.data, author=current_user)
         db.session.add(new_advertisement)
         db.session.commit()
         flash(_('New ad posted!'))
         return redirect(url_for('index'))
-    return render_template('new_ad.html', title=_('Post new ad'), form=form)
+    return render_template('new_ad.html', title=_('New ad'), form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])

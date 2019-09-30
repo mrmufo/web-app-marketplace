@@ -75,13 +75,13 @@ class User(UserMixin, db.Model):
 class Ad(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64))
-    content = db.Column(db.String(512))
+    description = db.Column(db.String(512))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     category = db.Column(db.String(32))
 
     def __repr__(self):
-        return '<Post {}>'.format(self.content)
+        return '<Post {}>'.format(self.description)
 
 
 @login.user_loader

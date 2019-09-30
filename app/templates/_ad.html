@@ -13,7 +13,7 @@
             {% endset %}
             {{ _('%(username)s said %(when)s', username=user_link, when=moment(ad.timestamp).fromNow()) }}
             <br>
-            {{ ad.content }}
+            {{ ad.description }}
         </td>
     </tr>
 </table>

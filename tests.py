@@ -58,10 +58,10 @@ class UserModelCase(unittest.TestCase):
 
         # create four ads
         now = datetime.utcnow()
-        p1 = Ad(content="ad from john", author=u1, timestamp=now + timedelta(seconds=1))
-        p2 = Ad(content="ad from susan", author=u2, timestamp=now + timedelta(seconds=4))
-        p3 = Ad(content="ad from mary", author=u3, timestamp=now + timedelta(seconds=3))
-        p4 = Ad(content="ad from david", author=u4, timestamp=now + timedelta(seconds=2))
+        p1 = Ad(description="ad from john", author=u1, timestamp=now + timedelta(seconds=1))
+        p2 = Ad(description="ad from susan", author=u2, timestamp=now + timedelta(seconds=4))
+        p3 = Ad(description="ad from mary", author=u3, timestamp=now + timedelta(seconds=3))
+        p4 = Ad(description="ad from david", author=u4, timestamp=now + timedelta(seconds=2))
         db.session.add_all([p1, p2, p3, p4])
         db.session.commit()
 
