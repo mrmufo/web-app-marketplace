@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, PasswordField, StringField, SubmitField, TextAreaField
+from wtforms import BooleanField, PasswordField, SelectField, StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 from flask_babel import _, lazy_gettext as _l
 from app.models import User
@@ -61,6 +61,23 @@ class EditProfileForm(FlaskForm):
 
 class AdForm(FlaskForm):
     title = StringField(_l('Title'), validators=[DataRequired(), Length(min=3, max=50)])
-    category = StringField(_l('Category'), validators=[DataRequired()])
+    choices = [
+        ('all', 'All'), ('motors', 'Motors'), ('electronics', 'Electronics'), ('kids', 'Kids'),
+        ('wedding', 'Wedding'), ('properties', 'Properties'), ('fashion', 'Fashion'),
+        ('sportandhobby', 'Sport & Hobby'), ('free', 'Free'), ('job', 'Job'),
+        ('agriculture', 'Agriculture'), ('musicandeducation', 'Music & Education'), ('swap', 'Swap'),
+        ('houseandgarden', 'House & Garden'), ('animals', 'Animals'), ('services', 'Services'),
+        ('findspecialist', 'Find specialist')]
+    # todo update category names
+    category = SelectField(_l('Category'), choices=choices, validators=[DataRequired()])
     description = StringField(_l('Description'), validators=[DataRequired(), Length(min=1, max=1500)])
     submit = SubmitField(_l('Submit'))
+
+
+class AdSearchForm(FlaskForm):
+    choices = [
+        'All', 'Motors', 'Electronics', 'Kids', 'Wedding', 'Properties', 'Fashion', 'Sport & Hobby', 'Free', 'Job',
+        'Agriculture', 'Music & Education', 'Swap', 'House & Garden', 'Animals', 'Services', 'Find specialist']
+    select = SelectField('Search in category:', choices=choices)
+    search = StringField('')
+    # todo finish later
