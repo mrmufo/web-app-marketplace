@@ -13,6 +13,8 @@
             {% endset %}
             {{ _('%(username)s said %(when)s', username=user_link, when=moment(ad.timestamp).fromNow()) }}
             <br>
+            {{ ad.title }}
+            <br>
             {{ ad.category }}
             <br>
             {{ ad.description }}
