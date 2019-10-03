@@ -201,3 +201,16 @@ def unfollow(username):
     db.session.commit()
     flash(_('You are not following %(username)s anymore', username=username))
     return redirect(url_for('user', username=username))
+
+
+@app.route('/show_ads/<category>')
+def show_ads(category):
+    page = request.args.get('page', 1, type=int)
+    ads = Ad.query.filter_by(category=category).order_by(Ad.timestamp.desc())
+    next_url = url_for('show_ads', category=category, page=ads.next_num) \
+        if ads.has_next else None
+    prev_url = url_for('show_ads', category=category, page=ads.prev_num) \
+        if ads.has_prev else None
+    return render_template('show_ads.html', title='Show ads', category=category, ads=ads.items,
+                           next_url=next_url, prev_url=prev_url)
+    # todo template
