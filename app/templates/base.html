@@ -27,8 +27,8 @@
                     <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
                     <li><a href="{{ url_for('explore') }}">{{ _('Explore') }}</a></li>
                 </ul>
-                <form class="form-inline" style="display: inline-block; margin-top:8px;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline" style="display: inline-block; margin-top:8px;" action="{{ url_for('show_ads', category=category) }}" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">

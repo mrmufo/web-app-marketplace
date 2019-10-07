@@ -17,7 +17,7 @@ from flask_babel import _, get_locale
 from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import (
-    EditProfileForm, LoginForm, AdForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
+    EditProfileForm, LoginForm, AdForm, AdSearchForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
 )
 from app.email import send_password_reset_email
 from app.models import User, Ad
@@ -205,12 +205,14 @@ def unfollow(username):
 
 @app.route('/show_ads/<category>')
 def show_ads(category):
+    form = AdSearchForm()
+    keyword = request.form['keyword']
     page = request.args.get('page', 1, type=int)
-    ads = Ad.query.filter_by(category=category).order_by(Ad.timestamp.desc())
+    ads = Ad.query.filter_by(category=category).ilike('%'+keyword+'%').order_by(Ad.timestamp.desc())
     next_url = url_for('show_ads', category=category, page=ads.next_num) \
         if ads.has_next else None
     prev_url = url_for('show_ads', category=category, page=ads.prev_num) \
         if ads.has_prev else None
-    return render_template('show_ads.html', title='Show ads', category=category, ads=ads.items,
+    return render_template('show_ads.html', title='Show ads', keyword=keyword, category=category, ads=ads.items,
                            next_url=next_url, prev_url=prev_url)
-    # todo template
+    # todo select field with category choices
