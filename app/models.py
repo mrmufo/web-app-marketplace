@@ -79,9 +79,10 @@ class Ad(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     category = db.Column(db.String(32))
+    language = db.Column(db.String(5))
 
     def __repr__(self):
-        return '<Post {}>'.format(self.description)
+        return '<Ad {}>'.format(self.description)
 
 
 @login.user_loader

@@ -15,6 +15,7 @@ from flask_login import (
 )
 from flask_babel import _, get_locale
 from werkzeug.urls import url_parse
+from guess_language import guess_language
 from app import app, db
 from app.forms import (
     EditProfileForm, LoginForm, AdForm, AdSearchForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
@@ -31,8 +32,8 @@ def before_request():
     g.locale = str(get_locale())
 
 
-@app.route('/', methods=['GET'])
-@app.route('/index', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
     page = request.args.get('page', 1, type=int)
@@ -49,9 +50,13 @@ def index():
 def new_ad():
     form = AdForm()
     if form.validate_on_submit():
-        new_advertisement = Ad(
-            title=form.title.data, category=form.category.data, description=form.description.data, author=current_user)
-        db.session.add(new_advertisement)
+        language = guess_language(form.description.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
+        new_ad = Ad(
+            title=form.title.data, category=form.category.data, description=form.description.data, language=language,
+            author=current_user)
+        db.session.add(new_ad)
         db.session.commit()
         flash(_('New ad posted!'))
         return redirect(url_for('index'))

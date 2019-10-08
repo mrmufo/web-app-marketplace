@@ -18,6 +18,12 @@
             {{ ad.category }}
             <br>
             {{ ad.description }}
+            <br>
+            {{ ad.language }}
+            {% if ad.language and ad.language != g.locale %}
+                <br><br>
+                <a href="#">{{ _('Translate') }}</a>
+            {% endif %}
         </td>
     </tr>
 </table>
