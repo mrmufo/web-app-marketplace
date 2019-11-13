@@ -5,7 +5,8 @@ from flask import (
     url_for,
     flash,
     request,
-    g
+    g,
+    jsonify
 )
 from flask_login import (
     current_user,
@@ -22,6 +23,7 @@ from app.forms import (
 )
 from app.email import send_password_reset_email
 from app.models import User, Ad
+from app.translate import translate
 
 
 @app.before_request
@@ -221,3 +223,11 @@ def show_ads(category):
     return render_template('show_ads.html', title='Show ads', keyword=keyword, category=category, ads=ads.items,
                            next_url=next_url, prev_url=prev_url)
     # todo select field with category choices
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'],
+                                      request.form['source_language'],
+                                      request.form['dest_language'])})

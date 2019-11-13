@@ -17,12 +17,18 @@
             <br>
             {{ ad.category }}
             <br>
-            {{ ad.description }}
+            <span id="ad{{ ad.id }}">{{ ad.description }}</span>
             <br>
             {{ ad.language }}
             {% if ad.language and ad.language != g.locale %}
                 <br><br>
-                <a href="#">{{ _('Translate') }}</a>
+                <span id="translation{{ ad.id }}">
+                    <a href="javascript:translate(
+                            '#ad{{ ad.id }}',
+                            '#translation{{ ad.id }}',
+                            '{{ ad.language }}',
+                            '{{ g.locale }}');">{{ _('Translate') }}</a>
+                </span>
             {% endif %}
         </td>
     </tr>
