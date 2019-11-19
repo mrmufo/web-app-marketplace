@@ -11,10 +11,10 @@
     <br>
     <p>
         {{ _('Forgot your password?') }}
-        <a href="{{ url_for('reset_password_request') }}">{{ _('Reset password') }}</a>
+        <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Reset password') }}</a>
     </p>
     <p>
         {{ _('Do not have an account yet?') }}
-        <a href="{{ url_for('register') }}">{{ _('Register') }}</a>
+        <a href="{{ url_for('auth.register') }}">{{ _('Register') }}</a>
     </p>
 {% endblock %}
