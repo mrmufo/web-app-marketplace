@@ -21,3 +21,4 @@ class Config(object):
     ADMINS = ['buysellrenthire@gmail.com']
     ADS_PER_PAGE = 3
     LANGUAGES = ['en', 'es']
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')

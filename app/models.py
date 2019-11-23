@@ -73,6 +73,7 @@ class User(UserMixin, db.Model):
 
 
 class Ad(db.Model):
+    __searchable__ = ['description']
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64))
     description = db.Column(db.String(512))
