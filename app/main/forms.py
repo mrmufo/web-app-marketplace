@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from flask import request
 from wtforms import SelectField, StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length, ValidationError, Regexp
 from flask_babel import _, lazy_gettext as _l
@@ -39,14 +40,12 @@ class AdForm(FlaskForm):
     submit = SubmitField(_l('Submit'))
 
 
-class AdSearchForm(FlaskForm):
-    choices = [
-        ('All', 'All'), ('Motors', 'Motors'), ('Electronics', 'Electronics'), ('Kids', 'Kids'),
-        ('Wedding', 'Wedding'), ('Properties', 'Properties'), ('Fashion', 'Fashion'),
-        ('Sport & Hobby', 'Sport & Hobby'), ('Free', 'Free'), ('Job', 'Job'),
-        ('Agriculture', 'Agriculture'), ('Music & Education', 'Music & Education'), ('Swap', 'Swap'),
-        ('House & Garden', 'House & Garden'), ('Animals', 'Animals'), ('Services', 'Services'),
-        ('Find Specialist', 'Find Specialist')]
-    select = SelectField('Search in category:', choices=choices)
-    search = StringField('')
-    # todo finish later
+class SearchForm(FlaskForm):
+    q = StringField(_l('Search'), validators=[DataRequired()])
+
+    def __init__(self, *args, **kwargs):
+        if 'formdata' not in kwargs:
+            kwargs['formdata'] = request.args
+        if 'csrf_enabled' not in kwargs:
+            kwargs['csrf_enabled'] = False
+        super(SearchForm, self).__init__(*args, **kwargs)

@@ -74,20 +74,6 @@ class User(UserMixin, db.Model):
         return User.query.get(id)
 
 
-class Ad(db.Model):
-    __searchable__ = ['description']
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(64))
-    description = db.Column(db.String(512))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    category = db.Column(db.String(32))
-    language = db.Column(db.String(5))
-
-    def __repr__(self):
-        return '<Ad {}>'.format(self.description)
-
-
 class SearchableMixin(object):
     @classmethod
     def search(cls, expression, page, per_page):
@@ -128,6 +114,20 @@ class SearchableMixin(object):
 
 db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
 db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
+
+
+class Ad(SearchableMixin, db.Model):
+    __searchable__ = ['description']
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64))
+    description = db.Column(db.String(512))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    category = db.Column(db.String(32))
+    language = db.Column(db.String(5))
+
+    def __repr__(self):
+        return '<Ad {}>'.format(self.description)
 
 
 @login.user_loader

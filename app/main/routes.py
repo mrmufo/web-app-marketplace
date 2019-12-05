@@ -17,7 +17,7 @@ from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
 from app.main import bp
-from app.main.forms import EditProfileForm, AdForm, AdSearchForm
+from app.main.forms import EditProfileForm, AdForm, SearchForm
 from app.models import User, Ad
 from app.translate import translate
 
@@ -26,7 +26,7 @@ from app.translate import translate
 def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
-        db.session.commit()
+        # db.session.commit()
     g.locale = str(get_locale())
 
 
@@ -136,19 +136,28 @@ def unfollow(username):
     return redirect(url_for('main.user', username=username))
 
 
-@bp.route('/show_ads/<category>')
-def show_ads(category):
-    form = AdSearchForm()
-    keyword = request.form['keyword']
+@bp.route('/search')
+@login_required
+def search():
+    if not g.search_form.validate():
+        return redirect(url_for('main.explore'))
     page = request.args.get('page', 1, type=int)
-    ads = Ad.query.filter_by(category=category).ilike('%'+keyword+'%').order_by(Ad.timestamp.desc())
-    next_url = url_for('main.show_ads', category=category, page=ads.next_num) \
-        if ads.has_next else None
-    prev_url = url_for('main.show_ads', category=category, page=ads.prev_num) \
-        if ads.has_prev else None
-    return render_template('show_ads.html', title='Show ads', keyword=keyword, category=category, ads=ads.items,
+    posts, total = Ad.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+    next_url = url_for('main.search', q=g.search_form.q.data, page=page + 1) \
+        if total > page * current_app.config['POSTS_PER_PAGE'] else None
+    prev_url = url_for('main.search', q=g.search_form.q.data, page=page - 1) \
+        if page > 1 else None
+    return render_template('search.html', title=_('Search'), posts=posts,
                            next_url=next_url, prev_url=prev_url)
-    # todo select field with category choices
+
+
+@bp.before_app_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
+        g.search_form = SearchForm()
+    g.locale = str(get_locale())
 
 
 @bp.route('/translate', methods=['POST'])
