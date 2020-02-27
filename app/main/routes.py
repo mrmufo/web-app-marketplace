@@ -178,4 +178,5 @@ def show_category(category):
         if ads.has_next else None
     prev_url = url_for('main.show_category', category=category, page=ads.prev_num) \
         if ads.has_prev else None
-    return render_template('index.html', title=_('Explore'), ads=ads.items, next_url=next_url, prev_url=prev_url)
+    return render_template('search.html', title=_('Explore'), ads=ads.items,
+                           next_url=next_url, prev_url=prev_url, category=category)

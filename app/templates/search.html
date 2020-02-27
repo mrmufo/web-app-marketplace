@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <h1>{{ _('Search Results') }}</h1>
-    {% for ad in ads %}
-        {% include '_ad.html' %}
-    {% endfor %}
+    {% if category %}
+        <h1>{{ category }}</h1>
+    {% else %}
+        <h1>{{ _('Search Results') }}</h1>
+    {% endif %}
+    {% if ads %}
+        {% for ad in ads %}
+            {% include '_ad.html' %}
+        {% endfor %}
+    {% else %}
+        <h3><i>There are currently no ads in this category. Please check later.</i></h3>
+    {% endif %}
     <nav aria-label="...">
         <ul class="pager">
             <li class="previous{% if not prev_url %} disabled{% endif %}">

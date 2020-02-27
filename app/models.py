@@ -38,7 +38,7 @@ class SearchableMixin(object):
                 add_to_index(obj.__tablename__, obj)
         for obj in session._changes['delete']:
             if isinstance(obj, SearchableMixin):
-                remove_from_index(obj.__tablename__, obj)   # Error
+                remove_from_index(obj.__tablename__, obj)
         session._changes = None
 
     @classmethod
