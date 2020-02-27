@@ -166,3 +166,16 @@ def translate_text():
     return jsonify({'text': translate(request.form['text'],
                                       request.form['source_language'],
                                       request.form['dest_language'])})
+
+
+@bp.route('/show_category/<category>')
+@login_required
+def show_category(category):
+    page = request.args.get('page', 1, type=int)
+    ads = Ad.query.filter(Ad.category == category).order_by(Ad.timestamp.desc())\
+        .paginate(page, current_app.config['ADS_PER_PAGE'], False)
+    next_url = url_for('main.show_category', category=category, page=ads.next_num) \
+        if ads.has_next else None
+    prev_url = url_for('main.show_category', category=category, page=ads.prev_num) \
+        if ads.has_prev else None
+    return render_template('index.html', title=_('Explore'), ads=ads.items, next_url=next_url, prev_url=prev_url)
