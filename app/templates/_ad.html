@@ -20,6 +20,7 @@
             <span id="ad{{ ad.id }}">{{ ad.description }}</span>
             <br>
             {{ ad.language }}
+
             {% if ad.language and ad.language != g.locale %}
                 <br><br>
                 <span id="translation{{ ad.id }}">

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>{{ ad.category }}</h1>
+    <tr>
+        <h2>{{ ad.title }}</h2>
+    </tr>
+    <tr>
+        {{ ad.description }}
+    </tr>
+    <tr>
+        {{ ad.timestamp }}
+    </tr>
+    <button type="button" onclick="javascript:history.back()">Back</button>
+{% endblock %}

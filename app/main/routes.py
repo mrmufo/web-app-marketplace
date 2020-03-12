@@ -14,7 +14,7 @@ from flask_login import (
     login_required
 )
 from flask_babel import _, get_locale
-from guess_language import guess_language
+from guess_language import guess_language, guess_language_name
 from app import db
 from app.main import bp
 from app.main.forms import EditProfileForm, AdForm, SearchForm
@@ -51,10 +51,10 @@ def new_ad():
         language = guess_language(form.description.data)
         if language == 'UNKNOWN' or len(language) > 5:
             language = ''
-        new_ad = Ad(
+        new = Ad(
             title=form.title.data, category=form.category.data, description=form.description.data, language=language,
             author=current_user)
-        db.session.add(new_ad)
+        db.session.add(new)
         db.session.commit()
         flash(_('New ad posted!'))
         return redirect(url_for('main.index'))
@@ -180,3 +180,11 @@ def show_category(category):
         if ads.has_prev else None
     return render_template('search.html', title=_('Explore'), ads=ads.items,
                            next_url=next_url, prev_url=prev_url, category=category)
+
+
+@bp.route('/ad_view/<id>')
+@login_required
+def ad_view(id):
+    ad = Ad.query.filter_by(id=id).first()
+    lang = guess_language_name(ad.language)
+    return render_template('ad_view.html', ad=ad, lang=lang)

@@ -37,7 +37,9 @@
     </div>
 
     {% for ad in ads %}
-        {% include '_ad.html' %}
+        <a href="{{ url_for('main.ad_view', id=ad.id) }}">
+            {% include '_ad.html' %}
+        </a>
     {% endfor %}
     <nav aria-label="...">
         <ul class="pager">
@@ -53,4 +55,5 @@
             </li>
         </ul>
     </nav>
+
 {% endblock %}
