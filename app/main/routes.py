@@ -14,7 +14,7 @@ from flask_login import (
     login_required
 )
 from flask_babel import _, get_locale
-from guess_language import guess_language, guess_language_name
+from guess_language import guess_language, _get_name
 from app import db
 from app.main import bp
 from app.main.forms import EditProfileForm, AdForm, SearchForm
@@ -186,5 +186,5 @@ def show_category(category):
 @login_required
 def ad_view(id):
     ad = Ad.query.filter_by(id=id).first()
-    lang = guess_language_name(ad.language)
+    lang = _get_name(ad.language)
     return render_template('ad_view.html', ad=ad, lang=lang)

@@ -37,7 +37,7 @@
     </div>
 
     {% for ad in ads %}
-        <a href="{{ url_for('main.ad_view', id=ad.id) }}">
+        <a href="{{ url_for('main.ad_view', id=ad.id) }}" style="text-decoration:none; color:inherit;">
             {% include '_ad.html' %}
         </a>
     {% endfor %}

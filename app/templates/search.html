@@ -8,7 +8,9 @@
     {% endif %}
     {% if ads %}
         {% for ad in ads %}
+        <a href="{{ url_for('main.ad_view', id=ad.id) }}" style="text-decoration:none; color:inherit;">
             {% include '_ad.html' %}
+        </a>
         {% endfor %}
     {% else %}
         <h3><i>There are currently no ads in this category. Please check later.</i></h3>

@@ -2,14 +2,32 @@
 
 {% block app_content %}
     <h1>{{ ad.category }}</h1>
-    <tr>
-        <h2>{{ ad.title }}</h2>
-    </tr>
-    <tr>
-        {{ ad.description }}
-    </tr>
-    <tr>
-        {{ ad.timestamp }}
-    </tr>
-    <button type="button" onclick="javascript:history.back()">Back</button>
+    <h2>{{ ad.title }}</h2>
+    <p><span id="ad{{ ad.id }}">{{ ad.description }}</span></p>
+
+    {% if ad.language and ad.language != g.locale %}
+        <span id="translation{{ ad.id }}">
+            <a href="javascript:translate(
+                    '#ad{{ ad.id }}',
+                    '#translation{{ ad.id }}',
+                    '{{ ad.language }}',
+                    '{{ g.locale }}');">{{ _('Translate') }}</a>
+        </span>
+    {% endif %}
+    <br>
+    <b>Ad originally posted in:</b>
+    {{ lang }}
+    <br>
+    <b>Posted on: </b>
+    {{ moment(ad.timestamp).format('Do MMMM YYYY hh:mm a') }}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous">
+                <a href="javascript:history.back()">
+                    <span aria-hidden="true">&larr;</span>
+                    {{ _('Go back') }}
+                </a>
+            </li>
+        </ul>
+    </nav>
 {% endblock %}
