@@ -1,23 +1,14 @@
 """
-This script will create or reset the ads table in the database to its initial
-state, with 3 sample ads.
+This script will reset the bsrh database to its initial state.
 """
 
 import sqlite3
 
 conn = sqlite3.connect('bsrh.db')
 cursor = conn.cursor()
-cursor.execute('DROP TABLE IF EXISTS ads')
-cursor.execute('''
-    CREATE TABLE ads (
-        id INTEGER PRIMARY KEY,
-        category TEXT,
-        title TEXT)
-''')
-cursor.execute('''
-    INSERT INTO ads (category, title) VALUES
-    ('Motors', 'Yamaha FZ6-N'),
-    ('Electronics', 'Google Pixel 3')
-''')
+cursor.execute('DROP TABLE IF EXISTS ad')
+cursor.execute('DROP TABLE IF EXISTS user')
+cursor.execute('DROP TABLE IF EXISTS followers')
+
 conn.commit()
 conn.close()

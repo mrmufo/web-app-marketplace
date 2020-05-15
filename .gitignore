@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/linux,flask,python,pycharm
 # Edit at https://www.gitignore.io/?templates=linux,flask,python,pycharm
 
+### Docker ###
+Dockerfile
+
 ### Flask ###
 instance/*
 !instance/.gitignore
