@@ -1,4 +1,4 @@
-2019-04-28 13:57:44,016 ERROR: Exception on /edit_profile [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1761]
+2019-04-28 14:38:51,752 ERROR: Exception on /edit_profile [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1236, in _execute_context
     cursor, statement, parameters, context
@@ -70,5 +70,71 @@ Traceback (most recent call last):
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 536, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: ('susan', 'I a zbyszek and y keyboard is fuked', 2)] (Background on this error at: http://sqlalche.me/e/gkpj)
-2019-04-28 14:38:39,584 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
-2019-04-28 14:38:40,060 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-04-28 15:20:08,814 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-04-28 15:20:09,302 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-04-28 19:49:30,243 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-04-28 19:49:30,788 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 16:48:11,024 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 16:51:11,209 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 16:52:45,875 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 16:55:06,574 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 17:04:18,750 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 17:06:18,729 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 17:14:37,361 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-05-16 17:40:52,993 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-07-01 11:29:04,483 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:51]
+2019-07-01 11:29:10,817 ERROR: Exception on /reset_password_request [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 192, in send
+    message.rcpt_options)
+  File "/usr/lib/python3.6/smtplib.py", line 852, in sendmail
+    self.ehlo_or_helo_if_needed()
+  File "/usr/lib/python3.6/smtplib.py", line 600, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "/usr/lib/python3.6/smtplib.py", line 440, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "/usr/lib/python3.6/smtplib.py", line 367, in putcmd
+    self.send(str)
+  File "/usr/lib/python3.6/smtplib.py", line 359, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mufo/FlaskProjects/BSRH/app/routes.py", line 102, in reset_password_request
+    send_password_reset_email(user)
+  File "/home/mufo/FlaskProjects/BSRH/app/email.py", line 21, in send_password_reset_email
+    user=user, token=token))
+  File "/home/mufo/FlaskProjects/BSRH/app/email.py", line 10, in send_email
+    mail.send(msg)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_mail.py", line 152, in __exit__
+    self.host.quit()
+  File "/usr/lib/python3.6/smtplib.py", line 984, in quit
+    res = self.docmd("quit")
+  File "/usr/lib/python3.6/smtplib.py", line 420, in docmd
+    self.putcmd(cmd, args)
+  File "/usr/lib/python3.6/smtplib.py", line 367, in putcmd
+    self.send(str)
+  File "/usr/lib/python3.6/smtplib.py", line 359, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2019-07-01 11:31:03,943 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:51]

@@ -1,51 +1,4 @@
-2019-07-13 17:33:04,352 ERROR: Exception on /favicon.ico [GET] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
-Traceback (most recent call last):
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1810, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1793, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/werkzeug/routing.py", line 1786, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1732, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1661, in handle_http_exception
-    return handler(e)
-  File "/home/mufo/FlaskProjects/BSRH/app/errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 41, in top-level template code
-    {% block scripts %}
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 42, in block "scripts"
-    {{ super() }}
-jinja2.exceptions.UndefinedError: there is no parent block called 'scripts'.
-2019-07-13 17:37:11,019 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
-2019-07-13 17:37:16,609 ERROR: Exception on /login [GET] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
+2019-07-13 17:40:46,576 ERROR: Exception on / [GET] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -59,8 +12,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/mufo/FlaskProjects/BSRH/app/routes.py", line 70, in login
-    return render_template('login.html', title='Sign in', form=form)
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/mufo/FlaskProjects/BSRH/app/routes.py", line 40, in index
+    next_url=next_url, prev_url=prev_url)
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
     context, ctx.app)
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
@@ -73,57 +28,90 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/login.html", line 1, in top-level template code
+  File "/home/mufo/FlaskProjects/BSRH/app/templates/index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 41, in top-level template code
-    {% block scripts %}
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 42, in block "scripts"
-    {{ super() }}
-jinja2.exceptions.UndefinedError: there is no parent block called 'scripts'.
-2019-07-13 17:37:16,995 ERROR: Exception on /favicon.ico [GET] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1780]
-Traceback (most recent call last):
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1810, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1793, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/ctx.py", line 336, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/werkzeug/routing.py", line 1786, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1834, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1732, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py", line 1661, in handle_http_exception
-    return handler(e)
-  File "/home/mufo/FlaskProjects/BSRH/app/errors.py", line 7, in not_found_error
-    return render_template('404.html'), 404
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
-    context, ctx.app)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
-    rv = template.render(context)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 41, in top-level template code
-    {% block scripts %}
-  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 42, in block "scripts"
-    {{ super() }}
-jinja2.exceptions.UndefinedError: there is no parent block called 'scripts'.
-2019-07-13 17:40:07,720 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+  File "/home/mufo/FlaskProjects/BSRH/app/templates/base.html", line 31, in top-level template code
+    {% for message in messages %}
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/mufo/FlaskProjects/BSRH/app/templates/index.html", line 27, in block "content"
+    {% block content2 %}
+  File "/home/mufo/FlaskProjects/BSRH/app/templates/index.html", line 44, in block "content2"
+    {% include '_ad.html' %}
+  File "/home/mufo/FlaskProjects/BSRH/app/templates/_ad.html", line 8, in top-level template code
+    advertised {{ moment(post.timestamp).fromNow() }}:
+  File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2019-07-13 17:41:49,769 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 18:13:46,772 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 18:15:33,639 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:10:29,962 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:15:32,279 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:16:50,428 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:17:47,257 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:18:44,728 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:20:22,607 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:21:59,439 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:22:00,023 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:24:23,579 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:25:00,300 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:25:36,529 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:25:59,501 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:29:25,675 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:36:33,478 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:37:46,994 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:40:15,065 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:41:00,303 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:42:10,136 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:45:10,897 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:48:09,964 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:49:34,640 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 19:54:35,110 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:02:59,137 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:03:44,133 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:04:09,556 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:06:41,556 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:07:24,777 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:07:44,482 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:08:32,536 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:09:45,177 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:11:24,101 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:11:48,382 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:12:24,167 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:13:32,240 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:14:54,039 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:16:33,390 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:18:34,608 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:19:11,019 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:19:54,057 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:21:07,112 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:21:27,313 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-13 20:22:56,806 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-22 19:02:14,845 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-22 20:23:53,756 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-22 20:30:41,009 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-22 20:31:20,855 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-22 20:50:00,943 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-22 20:55:38,525 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 18:54:53,146 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 18:54:53,676 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 19:05:12,111 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 19:05:26,229 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 19:10:49,412 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 19:55:52,401 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 19:55:52,920 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:54]
+2019-07-24 20:00:17,398 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-07-25 12:49:00,877 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-07-25 12:49:29,423 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-07-25 12:49:36,598 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-07-25 12:49:51,238 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-07-25 12:50:17,218 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-07-25 13:08:00,153 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:55]
+2019-11-24 12:30:48,717 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:74]

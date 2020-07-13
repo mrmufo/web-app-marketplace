@@ -1,5 +1,4 @@
-2019-04-15 19:22:47,254 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
-2019-04-15 19:23:00,033 ERROR: Exception on /edit_profile [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1761]
+2019-04-28 13:57:44,016 ERROR: Exception on /edit_profile [POST] [in /home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1236, in _execute_context
     cursor, statement, parameters, context
@@ -70,7 +69,6 @@ Traceback (most recent call last):
     cursor, statement, parameters, context
   File "/home/mufo/.virtualenvs/bsrh/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 536, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: ('Zbyszekk', '', 1)] (Background on this error at: http://sqlalche.me/e/gkpj)
-2019-04-21 00:07:38,964 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
-2019-04-28 13:56:45,860 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
-2019-04-28 13:56:46,274 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: 'UPDATE user SET username=?, about_me=? WHERE user.id = ?'] [parameters: ('susan', 'I a zbyszek and y keyboard is fuked', 2)] (Background on this error at: http://sqlalche.me/e/gkpj)
+2019-04-28 14:38:39,584 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]
+2019-04-28 14:38:40,060 INFO: BSRH startup [in /home/mufo/FlaskProjects/BSRH/app/__init__.py:47]

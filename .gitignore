@@ -278,4 +278,7 @@ fabric.properties
 prepros.cfg
 prepros-6.config
 
+### Logs ###
+logs/
+
 # End of https://www.gitignore.io/api/linux,flask,python,pycharm
