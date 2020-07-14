@@ -49,7 +49,7 @@ class SearchableMixin(object):
 
 db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
 db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
-db.event.listen(db.session, 'reindex', SearchableMixin.reindex())
+db.event.listen(db.session, 'reindex', SearchableMixin.reindex)
 
 followers = db.Table('followers',
                      db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
