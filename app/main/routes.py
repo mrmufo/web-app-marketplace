@@ -104,6 +104,13 @@ def explore():
                            next_url=next_url, prev_url=prev_url)
 
 
+@bp.route('/reindex')
+@login_required
+def reindex():
+    Ad.reindex()
+    return redirect(url_for('main.index'))
+
+
 @bp.route('/follow/<username>')
 @login_required
 def follow(username):
